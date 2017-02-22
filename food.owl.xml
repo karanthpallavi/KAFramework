@@ -1,0 +1,2114 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://kmi.open.ac.uk/projects/smartproducts/ontologies/food.owl#"
+     xml:base="http://kmi.open.ac.uk/projects/smartproducts/ontologies/food.owl"
+     xmlns:cicero="http://isweb.uni-koblenz.de/cicero#"
+     xmlns:process="http://kmi.open.ac.uk/projects/smartproducts/ontologies/process.owl#"
+     xmlns:product="http://kmi.open.ac.uk/projects/smartproducts/ontologies/product.owl#"
+     xmlns:w3ctime="http://www.w3.org/2006/time#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:ns="http://creativecommons.org/ns#"
+     xmlns:owl2xml="http://www.w3.org/2006/12/owl2-xml#"
+     xmlns:protege="http://protege.stanford.edu/plugins/owl/protege#"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:generic="http://kmi.open.ac.uk/projects/smartproducts/ontologies/generic.owl#"
+     xmlns:ssn="http://purl.oclc.org/NET/ssnx/ssn#"
+     xmlns:xsp="http://www.owl-ontologies.com/2005/08/07/xsp.owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:terms="http://purl.org/dc/terms/"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:sptime="http://kmi.open.ac.uk/projects/smartproducts/ontologies/time.owl#"
+     xmlns:context="http://kmi.open.ac.uk/projects/smartproducts/ontologies/context.owl#"
+     xmlns:dul="http://www.loa-cnr.it/ontologies/DUL.owl#"
+     xmlns:user="http://kmi.open.ac.uk/projects/smartproducts/ontologies/user.owl#"
+     xmlns:dc="http://purl.org/dc/elements/1.1/">
+    <owl:Ontology rdf:about="http://kmi.open.ac.uk/projects/smartproducts/ontologies/food.owl">
+        <owl:imports rdf:resource="http://kmi.open.ac.uk/projects/smartproducts/ontologies/product.owl"/>
+        <owl:imports rdf:resource="http://kmi.open.ac.uk/projects/smartproducts/ontologies/process.owl"/>
+        <owl:imports rdf:resource="http://protege.stanford.edu/ontologies/pizza/pizza.owl"/>
+        <rdfs:comment>Defines concepts and properties specific for the Philips use case (cooking domain).</rdfs:comment>
+        <dc:description xml:lang="en">Defines concepts and properties specific for the Philips use case (cooking domain).</dc:description>
+        <dc:title xml:lang="en">SmartProducts Food Domain Model</dc:title>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.w3.org/2000/01/rdf-schema#comment -->
+
+    <owl:AnnotationProperty rdf:about="http://www.w3.org/2000/01/rdf-schema#comment"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://kmi.open.ac.uk/projects/smartproducts/ontologies/food.owl#canBeReplacedWith -->
+
+    <owl:ObjectProperty rdf:about="http://kmi.open.ac.uk/projects/smartproducts/ontologies/food.owl#canBeReplacedWith">
+        <rdfs:domain rdf:resource="http://kmi.open.ac.uk/projects/smartproducts/ontologies/food.owl#FoodMatter"/>
+        <rdfs:range rdf:resource="http://kmi.open.ac.uk/projects/smartproducts/ontologies/food.owl#FoodMatter"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://kmi.open.ac.uk/projects/smartproducts/ontologies/food.owl#courseType -->
+
+    <owl:ObjectProperty rdf:about="http://kmi.open.ac.uk/projects/smartproducts/ontologies/food.owl#courseType">
+        <rdfs:domain rdf:resource="http://kmi.open.ac.uk/projects/smartproducts/ontologies/food.owl#MealCourseRole"/>
+        <rdfs:range rdf:resource="http://kmi.open.ac.uk/projects/smartproducts/ontologies/food.owl#MealCourseType"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://kmi.open.ac.uk/projects/smartproducts/ontologies/food.owl#courseValue -->
+
+    <owl:ObjectProperty rdf:about="http://kmi.open.ac.uk/projects/smartproducts/ontologies/food.owl#courseValue">
+        <rdfs:domain rdf:resource="http://kmi.open.ac.uk/projects/smartproducts/ontologies/food.owl#MealCourseRole"/>
+        <rdfs:range rdf:resource="http://kmi.open.ac.uk/projects/smartproducts/ontologies/food.owl#FoodOrDrinkItem"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://kmi.open.ac.uk/projects/smartproducts/ontologies/food.owl#hasAvailableIngredient -->
+
+    <owl:ObjectProperty rdf:about="http://kmi.open.ac.uk/projects/smartproducts/ontologies/food.owl#hasAvailableIngredient">
+        <rdfs:range rdf:resource="http://kmi.open.ac.uk/projects/smartproducts/ontologies/food.owl#IngredientPortion"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://kmi.open.ac.uk/projects/smartproducts/ontologies/food.owl#hasCookingTaskType -->
+
+    <owl:ObjectProperty rdf:about="http://kmi.open.ac.uk/projects/smartproducts/ontologies/food.owl#hasCookingTaskType">
+        <rdfs:subPropertyOf rdf:resource="http://www.loa-cnr.it/ontologies/DUL.owl#hasRegion"/>
+        <rdfs:domain rdf:resource="http://kmi.open.ac.uk/projects/smartproducts/ontologies/food.owl#CookingActivity"/>
+        <rdfs:range rdf:resource="http://kmi.open.ac.uk/projects/smartproducts/ontologies/food.owl#CookingTaskType"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://kmi.open.ac.uk/projects/smartproducts/ontologies/food.owl#hasDefaultPortion -->
+
+    <owl:ObjectProperty rdf:about="http://kmi.open.ac.uk/projects/smartproducts/ontologies/food.owl#hasDefaultPortion">
+        <rdfs:domain rdf:resource="http://kmi.open.ac.uk/projects/smartproducts/ontologies/food.owl#FoodOrDrinkMatter"/>
+        <rdfs:range rdf:resource="http://kmi.open.ac.uk/projects/smartproducts/ontologies/food.owl#DefaultIngredientPortion"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://kmi.open.ac.uk/projects/smartproducts/ontologies/food.owl#hasDietType -->
+
+    <owl:ObjectProperty rdf:about="http://kmi.open.ac.uk/projects/smartproducts/ontologies/food.owl#hasDietType">
+        <rdfs:subPropertyOf rdf:resource="http://www.loa-cnr.it/ontologies/DUL.owl#hasRegion"/>
+        <rdfs:domain rdf:resource="http://kmi.open.ac.uk/projects/smartproducts/ontologies/food.owl#DietAssessment"/>
+        <rdfs:range rdf:resource="http://kmi.open.ac.uk/projects/smartproducts/ontologies/food.owl#DietType"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://kmi.open.ac.uk/projects/smartproducts/ontologies/food.owl#hasDifficultyCategory -->
+
+    <owl:ObjectProperty rdf:about="http://kmi.open.ac.uk/projects/smartproducts/ontologies/food.owl#hasDifficultyCategory">
+        <rdfs:subPropertyOf rdf:resource="http://www.loa-cnr.it/ontologies/DUL.owl#hasRegion"/>
+        <rdfs:domain rdf:resource="http://kmi.open.ac.uk/projects/smartproducts/ontologies/food.owl#Recipe"/>
+        <rdfs:range rdf:resource="http://kmi.open.ac.uk/projects/smartproducts/ontologies/food.owl#CookingDifficultyCategory"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://kmi.open.ac.uk/projects/smartproducts/ontologies/food.owl#hasExpiryDate -->
+
+    <owl:ObjectProperty rdf:about="http://kmi.open.ac.uk/projects/smartproducts/ontologies/food.owl#hasExpiryDate">
+        <rdfs:domain rdf:resource="http://kmi.open.ac.uk/projects/smartproducts/ontologies/food.owl#ConcreteFoodOrDrinkItem"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://kmi.open.ac.uk/projects/smartproducts/ontologies/food.owl#hasGeographicalProvenance -->
+
+    <owl:ObjectProperty rdf:about="http://kmi.open.ac.uk/projects/smartproducts/ontologies/food.owl#hasGeographicalProvenance">
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://kmi.open.ac.uk/projects/smartproducts/ontologies/food.owl#FoodOrDrinkItem"/>
+                    <rdf:Description rdf:about="http://kmi.open.ac.uk/projects/smartproducts/ontologies/food.owl#Recipe"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+        <rdfs:range rdf:resource="http://kmi.open.ac.uk/projects/smartproducts/ontologies/generic.owl#PhysicalGeographicEntity"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://kmi.open.ac.uk/projects/smartproducts/ontologies/food.owl#hasGuest -->
+
+    <owl:ObjectProperty rdf:about="http://kmi.open.ac.uk/projects/smartproducts/ontologies/food.owl#hasGuest">
+        <rdfs:subPropertyOf rdf:resource="http://www.loa-cnr.it/ontologies/DUL.owl#includesAgent"/>
+        <rdfs:domain rdf:resource="http://kmi.open.ac.uk/projects/smartproducts/ontologies/food.owl#MealContext"/>
+        <rdfs:range rdf:resource="http://www.loa-cnr.it/ontologies/DUL.owl#Person"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://kmi.open.ac.uk/projects/smartproducts/ontologies/food.owl#hasHealthProfile -->
+
+    <owl:ObjectProperty rdf:about="http://kmi.open.ac.uk/projects/smartproducts/ontologies/food.owl#hasHealthProfile">
+        <rdfs:subPropertyOf rdf:resource="http://kmi.open.ac.uk/projects/smartproducts/ontologies/user.owl#hasProfile"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://kmi.open.ac.uk/projects/smartproducts/ontologies/food.owl#hasIngredient -->
+
+    <owl:ObjectProperty rdf:about="http://kmi.open.ac.uk/projects/smartproducts/ontologies/food.owl#hasIngredient">
+        <rdfs:subPropertyOf rdf:resource="http://kmi.open.ac.uk/projects/smartproducts/ontologies/generic.owl#hasSubComponent"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://kmi.open.ac.uk/projects/smartproducts/ontologies/food.owl#FoodOrDrinkItem"/>
+                    <rdf:Description rdf:about="http://kmi.open.ac.uk/projects/smartproducts/ontologies/food.owl#Recipe"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+        <rdfs:range rdf:resource="http://kmi.open.ac.uk/projects/smartproducts/ontologies/food.owl#IngredientPortion"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://kmi.open.ac.uk/projects/smartproducts/ontologies/food.owl#hasMealCourse -->
+
+    <owl:ObjectProperty rdf:about="http://kmi.open.ac.uk/projects/smartproducts/ontologies/food.owl#hasMealCourse">
+        <rdfs:subPropertyOf rdf:resource="http://www.loa-cnr.it/ontologies/DUL.owl#definesRole"/>
+        <rdfs:domain rdf:resource="http://kmi.open.ac.uk/projects/smartproducts/ontologies/food.owl#MealStructure"/>
+        <rdfs:range rdf:resource="http://kmi.open.ac.uk/projects/smartproducts/ontologies/food.owl#MealCourseRole"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://kmi.open.ac.uk/projects/smartproducts/ontologies/food.owl#hasMealStructure -->
+
+    <owl:ObjectProperty rdf:about="http://kmi.open.ac.uk/projects/smartproducts/ontologies/food.owl#hasMealStructure">
+        <rdfs:subPropertyOf rdf:resource="http://www.loa-cnr.it/ontologies/DUL.owl#satisfies"/>
+        <rdfs:domain rdf:resource="http://kmi.open.ac.uk/projects/smartproducts/ontologies/food.owl#MealContext"/>
+        <rdfs:range rdf:resource="http://kmi.open.ac.uk/projects/smartproducts/ontologies/food.owl#MealStructure"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://kmi.open.ac.uk/projects/smartproducts/ontologies/food.owl#hasNutrient -->
+
+    <owl:ObjectProperty rdf:about="http://kmi.open.ac.uk/projects/smartproducts/ontologies/food.owl#hasNutrient">
+        <rdfs:subPropertyOf rdf:resource="http://www.loa-cnr.it/ontologies/DUL.owl#hasPart"/>
+        <rdfs:domain rdf:resource="http://kmi.open.ac.uk/projects/smartproducts/ontologies/food.owl#FoodOrDrinkItem"/>
+        <rdfs:range rdf:resource="http://kmi.open.ac.uk/projects/smartproducts/ontologies/food.owl#NutrientPortion"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://kmi.open.ac.uk/projects/smartproducts/ontologies/food.owl#impliesPreference -->
+
+    <owl:ObjectProperty rdf:about="http://kmi.open.ac.uk/projects/smartproducts/ontologies/food.owl#impliesPreference">
+        <rdfs:domain rdf:resource="http://kmi.open.ac.uk/projects/smartproducts/ontologies/food.owl#HealthProfile"/>
+        <rdfs:range rdf:resource="http://kmi.open.ac.uk/projects/smartproducts/ontologies/user.owl#Preference"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://kmi.open.ac.uk/projects/smartproducts/ontologies/food.owl#largestProducer -->
+
+    <owl:ObjectProperty rdf:about="http://kmi.open.ac.uk/projects/smartproducts/ontologies/food.owl#largestProducer">
+        <rdfs:domain rdf:resource="http://kmi.open.ac.uk/projects/smartproducts/ontologies/food.owl#FoodOrDrinkItem"/>
+        <rdfs:range rdf:resource="http://www.loa-cnr.it/ontologies/DUL.owl#Place"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://kmi.open.ac.uk/projects/smartproducts/ontologies/food.owl#likes -->
+
+    <owl:ObjectProperty rdf:about="http://kmi.open.ac.uk/projects/smartproducts/ontologies/food.owl#likes">
+        <rdfs:domain rdf:resource="http://www.loa-cnr.it/ontologies/DUL.owl#Person"/>
+        <rdfs:range rdf:resource="http://kmi.open.ac.uk/projects/smartproducts/ontologies/food.owl#FoodOrDrinkItem"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://kmi.open.ac.uk/projects/smartproducts/ontologies/food.owl#producedByRecipe -->
+
+    <owl:ObjectProperty rdf:about="http://kmi.open.ac.uk/projects/smartproducts/ontologies/food.owl#producedByRecipe">
+        <owl:inverseOf rdf:resource="http://kmi.open.ac.uk/projects/smartproducts/ontologies/food.owl#producesFoodItem"/>
+        <rdfs:domain rdf:resource="http://kmi.open.ac.uk/projects/smartproducts/ontologies/food.owl#FoodOrDrinkItem"/>
+        <rdfs:range rdf:resource="http://kmi.open.ac.uk/projects/smartproducts/ontologies/food.owl#Recipe"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://kmi.open.ac.uk/projects/smartproducts/ontologies/food.owl#producesFoodItem -->
+
+    <owl:ObjectProperty rdf:about="http://kmi.open.ac.uk/projects/smartproducts/ontologies/food.owl#producesFoodItem">
+        <rdfs:domain rdf:resource="http://kmi.open.ac.uk/projects/smartproducts/ontologies/food.owl#Recipe"/>
+        <rdfs:range rdf:resource="http://kmi.open.ac.uk/projects/smartproducts/ontologies/food.owl#FoodOrDrinkItem"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://kmi.open.ac.uk/projects/smartproducts/ontologies/food.owl#suitableForDiet -->
+
+    <owl:ObjectProperty rdf:about="http://kmi.open.ac.uk/projects/smartproducts/ontologies/food.owl#suitableForDiet">
+        <rdfs:subPropertyOf rdf:resource="http://www.loa-cnr.it/ontologies/DUL.owl#hasQuality"/>
+        <rdfs:domain rdf:resource="http://kmi.open.ac.uk/projects/smartproducts/ontologies/food.owl#FoodOrDrinkItem"/>
+        <rdfs:range rdf:resource="http://kmi.open.ac.uk/projects/smartproducts/ontologies/food.owl#DietAssessment"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://kmi.open.ac.uk/projects/smartproducts/ontologies/food.owl#suitableForMealCourse -->
+
+    <owl:ObjectProperty rdf:about="http://kmi.open.ac.uk/projects/smartproducts/ontologies/food.owl#suitableForMealCourse">
+        <rdfs:domain rdf:resource="http://kmi.open.ac.uk/projects/smartproducts/ontologies/food.owl#FoodOrDrinkItem"/>
+        <rdfs:range rdf:resource="http://kmi.open.ac.uk/projects/smartproducts/ontologies/food.owl#MealCourseType"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://kmi.open.ac.uk/projects/smartproducts/ontologies/food.owl#treat -->
+
+    <owl:ObjectProperty rdf:about="http://kmi.open.ac.uk/projects/smartproducts/ontologies/food.owl#treat">
+        <rdfs:domain rdf:resource="http://kmi.open.ac.uk/projects/smartproducts/ontologies/food.owl#FoodOrDrinkItem"/>
+        <rdfs:range rdf:resource="http://kmi.open.ac.uk/projects/smartproducts/ontologies/food.owl#Disease"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://kmi.open.ac.uk/projects/smartproducts/ontologies/generic.owl#contains -->
+
+    <owl:ObjectProperty rdf:about="http://kmi.open.ac.uk/projects/smartproducts/ontologies/generic.owl#contains"/>
+    
+
+
+    <!-- http://kmi.open.ac.uk/projects/smartproducts/ontologies/generic.owl#hasPhysicalQuantityUnit -->
+
+    <owl:ObjectProperty rdf:about="http://kmi.open.ac.uk/projects/smartproducts/ontologies/generic.owl#hasPhysicalQuantityUnit"/>
+    
+
+
+    <!-- http://kmi.open.ac.uk/projects/smartproducts/ontologies/generic.owl#hasSubComponent -->
+
+    <owl:ObjectProperty rdf:about="http://kmi.open.ac.uk/projects/smartproducts/ontologies/generic.owl#hasSubComponent"/>
+    
+
+
+    <!-- http://kmi.open.ac.uk/projects/smartproducts/ontologies/generic.owl#madeOf -->
+
+    <owl:ObjectProperty rdf:about="http://kmi.open.ac.uk/projects/smartproducts/ontologies/generic.owl#madeOf"/>
+    
+
+
+    <!-- http://kmi.open.ac.uk/projects/smartproducts/ontologies/process.owl#hasStep -->
+
+    <owl:ObjectProperty rdf:about="http://kmi.open.ac.uk/projects/smartproducts/ontologies/process.owl#hasStep"/>
+    
+
+
+    <!-- http://kmi.open.ac.uk/projects/smartproducts/ontologies/user.owl#hasProfile -->
+
+    <owl:ObjectProperty rdf:about="http://kmi.open.ac.uk/projects/smartproducts/ontologies/user.owl#hasProfile"/>
+    
+
+
+    <!-- http://kmi.open.ac.uk/projects/smartproducts/ontologies/user.owl#preferenceValue -->
+
+    <owl:ObjectProperty rdf:about="http://kmi.open.ac.uk/projects/smartproducts/ontologies/user.owl#preferenceValue"/>
+    
+
+
+    <!-- http://www.loa-cnr.it/ontologies/DUL.owl#includesAgent -->
+
+    <owl:ObjectProperty rdf:about="http://www.loa-cnr.it/ontologies/DUL.owl#includesAgent"/>
+    
+
+
+    <!-- http://www.w3.org/2000/01/rdf-schema#subClassOf -->
+
+    <owl:ObjectProperty rdf:about="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://kmi.open.ac.uk/projects/smartproducts/ontologies/food.owl#hasScore -->
+
+    <owl:DatatypeProperty rdf:about="http://kmi.open.ac.uk/projects/smartproducts/ontologies/food.owl#hasScore">
+        <rdfs:domain rdf:resource="http://kmi.open.ac.uk/projects/smartproducts/ontologies/food.owl#DietAssessment"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://kmi.open.ac.uk/projects/smartproducts/ontologies/food.owl#numberOfGuests -->
+
+    <owl:DatatypeProperty rdf:about="http://kmi.open.ac.uk/projects/smartproducts/ontologies/food.owl#numberOfGuests">
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://kmi.open.ac.uk/projects/smartproducts/ontologies/food.owl#AmericanCuisineRecipe -->
+
+    <owl:Class rdf:about="http://kmi.open.ac.uk/projects/smartproducts/ontologies/food.owl#AmericanCuisineRecipe">
+        <rdfs:subClassOf rdf:resource="http://kmi.open.ac.uk/projects/smartproducts/ontologies/food.owl#RegionalCuisineRecipe"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://kmi.open.ac.uk/projects/smartproducts/ontologies/food.owl#hasGeographicalProvenance"/>
+                <owl:hasValue rdf:resource="http://kmi.open.ac.uk/projects/smartproducts/ontologies/generic.owl#USA"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://kmi.open.ac.uk/projects/smartproducts/ontologies/food.owl#AtomicFoodOrDrinkItem -->
+
+    <owl:Class rdf:about="http://kmi.open.ac.uk/projects/smartproducts/ontologies/food.owl#AtomicFoodOrDrinkItem">
+        <rdfs:subClassOf rdf:resource="http://kmi.open.ac.uk/projects/smartproducts/ontologies/food.owl#FoodOrDrinkItem"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://kmi.open.ac.uk/projects/smartproducts/ontologies/generic.owl#madeOf"/>
+                <owl:allValuesFrom rdf:resource="http://kmi.open.ac.uk/projects/smartproducts/ontologies/food.owl#FoodOrDrinkMatter"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://kmi.open.ac.uk/projects/smartproducts/ontologies/generic.owl#madeOf"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://kmi.open.ac.uk/projects/smartproducts/ontologies/food.owl#FoodOrDrinkMatter"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://kmi.open.ac.uk/projects/smartproducts/ontologies/food.owl#BakingOven -->
+
+    <owl:Class rdf:about="http://kmi.open.ac.uk/projects/smartproducts/ontologies/food.owl#BakingOven">
+        <rdfs:subClassOf rdf:resource="http://kmi.open.ac.uk/projects/smartproducts/ontologies/food.owl#Oven"/>
+    </owl:Class>
+    
+
+
+    <!-- http://kmi.open.ac.uk/projects/smartproducts/ontologies/food.owl#Berries -->
+
+    <owl:Class rdf:about="http://kmi.open.ac.uk/projects/smartproducts/ontologies/food.owl#Berries">
+        <rdfs:subClassOf rdf:resource="http://kmi.open.ac.uk/projects/smartproducts/ontologies/food.owl#Fruits"/>
+    </owl:Class>
+    
+
+
+    <!-- http://kmi.open.ac.uk/projects/smartproducts/ontologies/food.owl#BritishCuisineRecipe -->
+
+    <owl:Class rdf:about="http://kmi.open.ac.uk/projects/smartproducts/ontologies/food.owl#BritishCuisineRecipe">
+        <rdfs:subClassOf rdf:resource="http://kmi.open.ac.uk/projects/smartproducts/ontologies/food.owl#RegionalCuisineRecipe"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://kmi.open.ac.uk/projects/smartproducts/ontologies/food.owl#hasGeographicalProvenance"/>
+                <owl:hasValue rdf:resource="http://kmi.open.ac.uk/projects/smartproducts/ontologies/generic.owl#UK"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://kmi.open.ac.uk/projects/smartproducts/ontologies/food.owl#CaribbeanCuisineRecipe -->
+
+    <owl:Class rdf:about="http://kmi.open.ac.uk/projects/smartproducts/ontologies/food.owl#CaribbeanCuisineRecipe">
+        <rdfs:subClassOf rdf:resource="http://kmi.open.ac.uk/projects/smartproducts/ontologies/food.owl#RegionalCuisineRecipe"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://kmi.open.ac.uk/projects/smartproducts/ontologies/food.owl#hasGeographicalProvenance"/>
+                <owl:hasValue rdf:resource="http://kmi.open.ac.uk/projects/smartproducts/ontologies/generic.owl#Caribbean"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://kmi.open.ac.uk/projects/smartproducts/ontologies/food.owl#ChineseCuisineRecipe -->
+
+    <owl:Class rdf:about="http://kmi.open.ac.uk/projects/smartproducts/ontologies/food.owl#ChineseCuisineRecipe">
+        <rdfs:subClassOf rdf:resource="http://kmi.open.ac.uk/projects/smartproducts/ontologies/food.owl#RegionalCuisineRecipe"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://kmi.open.ac.uk/projects/smartproducts/ontologies/food.owl#hasGeographicalProvenance"/>
+                <owl:hasValue rdf:resource="http://kmi.open.ac.uk/projects/smartproducts/ontologies/generic.owl#China"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://kmi.open.ac.uk/projects/smartproducts/ontologies/food.owl#CitrusFruit -->
+
+    <owl:Class rdf:about="http://kmi.open.ac.uk/projects/smartproducts/ontologies/food.owl#CitrusFruit">
+        <rdfs:subClassOf rdf:resource="http://kmi.open.ac.uk/projects/smartproducts/ontologies/food.owl#Fruits"/>
+    </owl:Class>
+    
+
+
+    <!-- http://kmi.open.ac.uk/projects/smartproducts/ontologies/food.owl#CompositeFoodOrDrinkItem -->
+
+    <owl:Class rdf:about="http://kmi.open.ac.uk/projects/smartproducts/ontologies/food.owl#CompositeFoodOrDrinkItem">
+        <rdfs:subClassOf rdf:resource="http://kmi.open.ac.uk/projects/smartproducts/ontologies/food.owl#FoodOrDrinkItem"/>
+        <rdfs:subClassOf rdf:resource="http://kmi.open.ac.uk/projects/smartproducts/ontologies/generic.owl#Assembly"/>
+    </owl:Class>
+    
+
+
+    <!-- http://kmi.open.ac.uk/projects/smartproducts/ontologies/food.owl#ConcreteDrinkItem -->
+
+    <owl:Class rdf:about="http://kmi.open.ac.uk/projects/smartproducts/ontologies/food.owl#ConcreteDrinkItem">
+        <rdfs:subClassOf rdf:resource="http://kmi.open.ac.uk/projects/smartproducts/ontologies/food.owl#ConcreteFoodOrDrinkItem"/>
+        <rdfs:subClassOf rdf:resource="http://kmi.open.ac.uk/projects/smartproducts/ontologies/food.owl#DrinkItem"/>
+    </owl:Class>
+    
+
+
+    <!-- http://kmi.open.ac.uk/projects/smartproducts/ontologies/food.owl#ConcreteFoodItem -->
+
+    <owl:Class rdf:about="http://kmi.open.ac.uk/projects/smartproducts/ontologies/food.owl#ConcreteFoodItem">
+        <rdfs:subClassOf rdf:resource="http://kmi.open.ac.uk/projects/smartproducts/ontologies/food.owl#ConcreteFoodOrDrinkItem"/>
+        <rdfs:subClassOf rdf:resource="http://kmi.open.ac.uk/projects/smartproducts/ontologies/food.owl#FoodItem"/>
+    </owl:Class>
+    
+
+
+    <!-- http://kmi.open.ac.uk/projects/smartproducts/ontologies/food.owl#ConcreteFoodOrDrinkItem -->
+
+    <owl:Class rdf:about="http://kmi.open.ac.uk/projects/smartproducts/ontologies/food.owl#ConcreteFoodOrDrinkItem">
+        <rdfs:subClassOf rdf:resource="http://kmi.open.ac.uk/projects/smartproducts/ontologies/food.owl#FoodOrDrinkItem"/>
+        <owl:disjointWith rdf:resource="http://kmi.open.ac.uk/projects/smartproducts/ontologies/food.owl#IngredientPortion"/>
+        <owl:disjointWith rdf:resource="http://kmi.open.ac.uk/projects/smartproducts/ontologies/food.owl#VirtualFoodOrDrinkItem"/>
+    </owl:Class>
+    
+
+
+    <!-- http://kmi.open.ac.uk/projects/smartproducts/ontologies/food.owl#CookingActivity -->
+
+    <owl:Class rdf:about="http://kmi.open.ac.uk/projects/smartproducts/ontologies/food.owl#CookingActivity">
+        <rdfs:subClassOf rdf:resource="http://kmi.open.ac.uk/projects/smartproducts/ontologies/process.owl#ActivityDefinition"/>
+    </owl:Class>
+    
+
+
+    <!-- http://kmi.open.ac.uk/projects/smartproducts/ontologies/food.owl#CookingDifficultyCategory -->
+
+    <owl:Class rdf:about="http://kmi.open.ac.uk/projects/smartproducts/ontologies/food.owl#CookingDifficultyCategory">
+        <rdfs:subClassOf rdf:resource="http://www.loa-cnr.it/ontologies/DUL.owl#SocialObjectAttribute"/>
+    </owl:Class>
+    
+
+
+    <!-- http://kmi.open.ac.uk/projects/smartproducts/ontologies/food.owl#CookingGuide -->
+
+    <owl:Class rdf:about="http://kmi.open.ac.uk/projects/smartproducts/ontologies/food.owl#CookingGuide">
+        <rdfs:subClassOf rdf:resource="http://kmi.open.ac.uk/projects/smartproducts/ontologies/food.owl#KitchenTool"/>
+    </owl:Class>
+    
+
+
+    <!-- http://kmi.open.ac.uk/projects/smartproducts/ontologies/food.owl#CookingTaskType -->
+
+    <owl:Class rdf:about="http://kmi.open.ac.uk/projects/smartproducts/ontologies/food.owl#CookingTaskType">
+        <rdfs:subClassOf rdf:resource="http://www.loa-cnr.it/ontologies/DUL.owl#SocialObjectAttribute"/>
+    </owl:Class>
+    
+
+
+    <!-- http://kmi.open.ac.uk/projects/smartproducts/ontologies/food.owl#DefaultIngredientPortion -->
+
+    <owl:Class rdf:about="http://kmi.open.ac.uk/projects/smartproducts/ontologies/food.owl#DefaultIngredientPortion">
+        <rdfs:subClassOf rdf:resource="http://kmi.open.ac.uk/projects/smartproducts/ontologies/food.owl#IngredientPortion"/>
+    </owl:Class>
+    
+
+
+    <!-- http://kmi.open.ac.uk/projects/smartproducts/ontologies/food.owl#DessertCourseRole -->
+
+    <owl:Class rdf:about="http://kmi.open.ac.uk/projects/smartproducts/ontologies/food.owl#DessertCourseRole">
+        <rdfs:subClassOf rdf:resource="http://kmi.open.ac.uk/projects/smartproducts/ontologies/food.owl#MealCourseRole"/>
+    </owl:Class>
+    
+
+
+    <!-- http://kmi.open.ac.uk/projects/smartproducts/ontologies/food.owl#DietAssessment -->
+
+    <owl:Class rdf:about="http://kmi.open.ac.uk/projects/smartproducts/ontologies/food.owl#DietAssessment">
+        <rdfs:subClassOf rdf:resource="http://www.loa-cnr.it/ontologies/DUL.owl#Quality"/>
+    </owl:Class>
+    
+
+
+    <!-- http://kmi.open.ac.uk/projects/smartproducts/ontologies/food.owl#DietType -->
+
+    <owl:Class rdf:about="http://kmi.open.ac.uk/projects/smartproducts/ontologies/food.owl#DietType">
+        <rdfs:subClassOf rdf:resource="http://www.loa-cnr.it/ontologies/DUL.owl#Concept"/>
+    </owl:Class>
+    
+
+
+    <!-- http://kmi.open.ac.uk/projects/smartproducts/ontologies/food.owl#Disease -->
+
+    <owl:Class rdf:about="http://kmi.open.ac.uk/projects/smartproducts/ontologies/food.owl#Disease">
+        <rdfs:subClassOf rdf:resource="http://kmi.open.ac.uk/projects/smartproducts/ontologies/food.owl#HealthProfile"/>
+    </owl:Class>
+    
+
+
+    <!-- http://kmi.open.ac.uk/projects/smartproducts/ontologies/food.owl#DishPreference -->
+
+    <owl:Class rdf:about="http://kmi.open.ac.uk/projects/smartproducts/ontologies/food.owl#DishPreference">
+        <rdfs:subClassOf rdf:resource="http://kmi.open.ac.uk/projects/smartproducts/ontologies/food.owl#RecipePreference"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://kmi.open.ac.uk/projects/smartproducts/ontologies/user.owl#preferenceValue"/>
+                <owl:someValuesFrom rdf:resource="http://kmi.open.ac.uk/projects/smartproducts/ontologies/food.owl#FoodOrDrinkMatter"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://kmi.open.ac.uk/projects/smartproducts/ontologies/food.owl#Drink -->
+
+    <owl:Class rdf:about="http://kmi.open.ac.uk/projects/smartproducts/ontologies/food.owl#Drink">
+        <rdfs:subClassOf rdf:resource="http://kmi.open.ac.uk/projects/smartproducts/ontologies/food.owl#FoodOrDrink"/>
+    </owl:Class>
+    
+
+
+    <!-- http://kmi.open.ac.uk/projects/smartproducts/ontologies/food.owl#DrinkItem -->
+
+    <owl:Class rdf:about="http://kmi.open.ac.uk/projects/smartproducts/ontologies/food.owl#DrinkItem">
+        <rdfs:subClassOf rdf:resource="http://kmi.open.ac.uk/projects/smartproducts/ontologies/food.owl#FoodOrDrinkItem"/>
+    </owl:Class>
+    
+
+
+    <!-- http://kmi.open.ac.uk/projects/smartproducts/ontologies/food.owl#EnergyQuantityInCalories -->
+
+    <owl:Class rdf:about="http://kmi.open.ac.uk/projects/smartproducts/ontologies/food.owl#EnergyQuantityInCalories">
+        <rdfs:subClassOf rdf:resource="http://kmi.open.ac.uk/projects/smartproducts/ontologies/generic.owl#EnergyQuantity"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://kmi.open.ac.uk/projects/smartproducts/ontologies/generic.owl#hasPhysicalQuantityUnit"/>
+                <owl:hasValue rdf:resource="http://kmi.open.ac.uk/projects/smartproducts/ontologies/generic.owl#calorie"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://kmi.open.ac.uk/projects/smartproducts/ontologies/food.owl#Food -->
+
+    <owl:Class rdf:about="http://kmi.open.ac.uk/projects/smartproducts/ontologies/food.owl#Food">
+        <rdfs:subClassOf rdf:resource="http://kmi.open.ac.uk/projects/smartproducts/ontologies/food.owl#FoodOrDrink"/>
+    </owl:Class>
+    
+
+
+    <!-- http://kmi.open.ac.uk/projects/smartproducts/ontologies/food.owl#FoodItem -->
+
+    <owl:Class rdf:about="http://kmi.open.ac.uk/projects/smartproducts/ontologies/food.owl#FoodItem">
+        <rdfs:subClassOf rdf:resource="http://kmi.open.ac.uk/projects/smartproducts/ontologies/food.owl#FoodOrDrinkItem"/>
+    </owl:Class>
+    
+
+
+    <!-- http://kmi.open.ac.uk/projects/smartproducts/ontologies/food.owl#FoodMatter -->
+
+    <owl:Class rdf:about="http://kmi.open.ac.uk/projects/smartproducts/ontologies/food.owl#FoodMatter">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
+                <owl:hasValue rdf:resource="http://kmi.open.ac.uk/projects/smartproducts/ontologies/food.owl#Food"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://kmi.open.ac.uk/projects/smartproducts/ontologies/food.owl#FoodOrDrinkMatter"/>
+    </owl:Class>
+    
+
+
+    <!-- http://kmi.open.ac.uk/projects/smartproducts/ontologies/food.owl#FoodOrDrink -->
+
+    <owl:Class rdf:about="http://kmi.open.ac.uk/projects/smartproducts/ontologies/food.owl#FoodOrDrink">
+        <rdfs:subClassOf rdf:resource="http://kmi.open.ac.uk/projects/smartproducts/ontologies/food.owl#FoodOrDrinkItem"/>
+    </owl:Class>
+    
+
+
+    <!-- http://kmi.open.ac.uk/projects/smartproducts/ontologies/food.owl#FoodOrDrinkItem -->
+
+    <owl:Class rdf:about="http://kmi.open.ac.uk/projects/smartproducts/ontologies/food.owl#FoodOrDrinkItem">
+        <rdfs:subClassOf rdf:resource="http://kmi.open.ac.uk/projects/smartproducts/ontologies/generic.owl#PhysicalEntityInSpace"/>
+        <rdfs:subClassOf rdf:resource="http://www.loa-cnr.it/ontologies/DUL.owl#PhysicalBody"/>
+    </owl:Class>
+    
+
+
+    <!-- http://kmi.open.ac.uk/projects/smartproducts/ontologies/food.owl#FoodOrDrinkMatter -->
+
+    <owl:Class rdf:about="http://kmi.open.ac.uk/projects/smartproducts/ontologies/food.owl#FoodOrDrinkMatter">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
+                <owl:hasValue rdf:resource="http://kmi.open.ac.uk/projects/smartproducts/ontologies/food.owl#FoodOrDrink"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://kmi.open.ac.uk/projects/smartproducts/ontologies/generic.owl#Matter"/>
+        <rdfs:subClassOf rdf:resource="http://kmi.open.ac.uk/projects/smartproducts/ontologies/generic.owl#MetaClass"/>
+    </owl:Class>
+    
+
+
+    <!-- http://kmi.open.ac.uk/projects/smartproducts/ontologies/food.owl#FoodPreference -->
+
+    <owl:Class rdf:about="http://kmi.open.ac.uk/projects/smartproducts/ontologies/food.owl#FoodPreference">
+        <rdfs:subClassOf rdf:resource="http://kmi.open.ac.uk/projects/smartproducts/ontologies/user.owl#Preference"/>
+    </owl:Class>
+    
+
+
+    <!-- http://kmi.open.ac.uk/projects/smartproducts/ontologies/food.owl#FoodProduct -->
+
+    <owl:Class rdf:about="http://kmi.open.ac.uk/projects/smartproducts/ontologies/food.owl#FoodProduct">
+        <rdfs:subClassOf rdf:resource="http://kmi.open.ac.uk/projects/smartproducts/ontologies/food.owl#FoodItem"/>
+        <rdfs:subClassOf rdf:resource="http://kmi.open.ac.uk/projects/smartproducts/ontologies/product.owl#Product"/>
+    </owl:Class>
+    
+
+
+    <!-- http://kmi.open.ac.uk/projects/smartproducts/ontologies/food.owl#FrenchCuisineRecipe -->
+
+    <owl:Class rdf:about="http://kmi.open.ac.uk/projects/smartproducts/ontologies/food.owl#FrenchCuisineRecipe">
+        <rdfs:subClassOf rdf:resource="http://kmi.open.ac.uk/projects/smartproducts/ontologies/food.owl#RegionalCuisineRecipe"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://kmi.open.ac.uk/projects/smartproducts/ontologies/food.owl#hasGeographicalProvenance"/>
+                <owl:hasValue rdf:resource="http://kmi.open.ac.uk/projects/smartproducts/ontologies/generic.owl#France"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://kmi.open.ac.uk/projects/smartproducts/ontologies/food.owl#Fridge -->
+
+    <owl:Class rdf:about="http://kmi.open.ac.uk/projects/smartproducts/ontologies/food.owl#Fridge">
+        <rdfs:subClassOf rdf:resource="http://kmi.open.ac.uk/projects/smartproducts/ontologies/food.owl#KitchenTool"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://kmi.open.ac.uk/projects/smartproducts/ontologies/generic.owl#hasSubComponent"/>
+                <owl:someValuesFrom rdf:resource="http://kmi.open.ac.uk/projects/smartproducts/ontologies/generic.owl#Thermometer"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://kmi.open.ac.uk/projects/smartproducts/ontologies/generic.owl#contains"/>
+                <owl:allValuesFrom rdf:resource="http://kmi.open.ac.uk/projects/smartproducts/ontologies/food.owl#ConcreteFoodOrDrinkItem"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://kmi.open.ac.uk/projects/smartproducts/ontologies/food.owl#Fruits -->
+
+    <owl:Class rdf:about="http://kmi.open.ac.uk/projects/smartproducts/ontologies/food.owl#Fruits">
+        <rdfs:subClassOf rdf:resource="http://kmi.open.ac.uk/projects/smartproducts/ontologies/food.owl#ConcreteFoodItem"/>
+    </owl:Class>
+    
+
+
+    <!-- http://kmi.open.ac.uk/projects/smartproducts/ontologies/food.owl#FryingPan -->
+
+    <owl:Class rdf:about="http://kmi.open.ac.uk/projects/smartproducts/ontologies/food.owl#FryingPan">
+        <rdfs:subClassOf rdf:resource="http://kmi.open.ac.uk/projects/smartproducts/ontologies/food.owl#KitchenTool"/>
+    </owl:Class>
+    
+
+
+    <!-- http://kmi.open.ac.uk/projects/smartproducts/ontologies/food.owl#GermanCuisineRecipe -->
+
+    <owl:Class rdf:about="http://kmi.open.ac.uk/projects/smartproducts/ontologies/food.owl#GermanCuisineRecipe">
+        <rdfs:subClassOf rdf:resource="http://kmi.open.ac.uk/projects/smartproducts/ontologies/food.owl#RegionalCuisineRecipe"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://kmi.open.ac.uk/projects/smartproducts/ontologies/food.owl#hasGeographicalProvenance"/>
+                <owl:hasValue rdf:resource="http://kmi.open.ac.uk/projects/smartproducts/ontologies/generic.owl#Germany"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://kmi.open.ac.uk/projects/smartproducts/ontologies/food.owl#GreekCuisineRecipe -->
+
+    <owl:Class rdf:about="http://kmi.open.ac.uk/projects/smartproducts/ontologies/food.owl#GreekCuisineRecipe">
+        <rdfs:subClassOf rdf:resource="http://kmi.open.ac.uk/projects/smartproducts/ontologies/food.owl#MediterraneanCuisineRecipe"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://kmi.open.ac.uk/projects/smartproducts/ontologies/food.owl#hasGeographicalProvenance"/>
+                <owl:hasValue rdf:resource="http://kmi.open.ac.uk/projects/smartproducts/ontologies/generic.owl#Greece"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://kmi.open.ac.uk/projects/smartproducts/ontologies/food.owl#Grill -->
+
+    <owl:Class rdf:about="http://kmi.open.ac.uk/projects/smartproducts/ontologies/food.owl#Grill">
+        <rdfs:subClassOf rdf:resource="http://kmi.open.ac.uk/projects/smartproducts/ontologies/food.owl#KitchenTool"/>
+    </owl:Class>
+    
+
+
+    <!-- http://kmi.open.ac.uk/projects/smartproducts/ontologies/food.owl#HealthProfile -->
+
+    <owl:Class rdf:about="http://kmi.open.ac.uk/projects/smartproducts/ontologies/food.owl#HealthProfile">
+        <rdfs:subClassOf rdf:resource="http://kmi.open.ac.uk/projects/smartproducts/ontologies/user.owl#UserProfile"/>
+    </owl:Class>
+    
+
+
+    <!-- http://kmi.open.ac.uk/projects/smartproducts/ontologies/food.owl#IndianCuisineRecipe -->
+
+    <owl:Class rdf:about="http://kmi.open.ac.uk/projects/smartproducts/ontologies/food.owl#IndianCuisineRecipe">
+        <rdfs:subClassOf rdf:resource="http://kmi.open.ac.uk/projects/smartproducts/ontologies/food.owl#RegionalCuisineRecipe"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://kmi.open.ac.uk/projects/smartproducts/ontologies/food.owl#hasGeographicalProvenance"/>
+                <owl:hasValue rdf:resource="http://kmi.open.ac.uk/projects/smartproducts/ontologies/generic.owl#India"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://kmi.open.ac.uk/projects/smartproducts/ontologies/food.owl#IngredientPortion -->
+
+    <owl:Class rdf:about="http://kmi.open.ac.uk/projects/smartproducts/ontologies/food.owl#IngredientPortion">
+        <rdfs:subClassOf rdf:resource="http://kmi.open.ac.uk/projects/smartproducts/ontologies/food.owl#AtomicFoodOrDrinkItem"/>
+        <rdfs:subClassOf rdf:resource="http://kmi.open.ac.uk/projects/smartproducts/ontologies/food.owl#VirtualFoodOrDrinkItem"/>
+        <rdfs:subClassOf rdf:resource="http://kmi.open.ac.uk/projects/smartproducts/ontologies/generic.owl#AssemblyComponent"/>
+        <rdfs:subClassOf rdf:resource="http://www.loa-cnr.it/ontologies/DUL.owl#Substance"/>
+    </owl:Class>
+    
+
+
+    <!-- http://kmi.open.ac.uk/projects/smartproducts/ontologies/food.owl#IngredientPreference -->
+
+    <owl:Class rdf:about="http://kmi.open.ac.uk/projects/smartproducts/ontologies/food.owl#IngredientPreference">
+        <rdfs:subClassOf rdf:resource="http://kmi.open.ac.uk/projects/smartproducts/ontologies/food.owl#RecipePreference"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://kmi.open.ac.uk/projects/smartproducts/ontologies/user.owl#preferenceValue"/>
+                <owl:allValuesFrom rdf:resource="http://kmi.open.ac.uk/projects/smartproducts/ontologies/food.owl#FoodOrDrinkMatter"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment rdf:resource="http://kmi.open.ac.uk/projects/smartproducts/ontologies/food.owl#SideCourse"/>
+    </owl:Class>
+    
+
+
+    <!-- http://kmi.open.ac.uk/projects/smartproducts/ontologies/food.owl#IrishCuisineRecipe -->
+
+    <owl:Class rdf:about="http://kmi.open.ac.uk/projects/smartproducts/ontologies/food.owl#IrishCuisineRecipe">
+        <rdfs:subClassOf rdf:resource="http://kmi.open.ac.uk/projects/smartproducts/ontologies/food.owl#RegionalCuisineRecipe"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://kmi.open.ac.uk/projects/smartproducts/ontologies/food.owl#hasGeographicalProvenance"/>
+                <owl:hasValue rdf:resource="http://kmi.open.ac.uk/projects/smartproducts/ontologies/generic.owl#Ireland"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://kmi.open.ac.uk/projects/smartproducts/ontologies/food.owl#ItalianCuisineRecipe -->
+
+    <owl:Class rdf:about="http://kmi.open.ac.uk/projects/smartproducts/ontologies/food.owl#ItalianCuisineRecipe">
+        <rdfs:subClassOf rdf:resource="http://kmi.open.ac.uk/projects/smartproducts/ontologies/food.owl#MediterraneanCuisineRecipe"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://kmi.open.ac.uk/projects/smartproducts/ontologies/food.owl#hasGeographicalProvenance"/>
+                <owl:hasValue rdf:resource="http://kmi.open.ac.uk/projects/smartproducts/ontologies/generic.owl#Italy"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://kmi.open.ac.uk/projects/smartproducts/ontologies/food.owl#JapaneseCuisineRecipe -->
+
+    <owl:Class rdf:about="http://kmi.open.ac.uk/projects/smartproducts/ontologies/food.owl#JapaneseCuisineRecipe">
+        <rdfs:subClassOf rdf:resource="http://kmi.open.ac.uk/projects/smartproducts/ontologies/food.owl#RegionalCuisineRecipe"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://kmi.open.ac.uk/projects/smartproducts/ontologies/food.owl#hasGeographicalProvenance"/>
+                <owl:hasValue rdf:resource="http://kmi.open.ac.uk/projects/smartproducts/ontologies/generic.owl#Japan"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://kmi.open.ac.uk/projects/smartproducts/ontologies/food.owl#KitchenTool -->
+
+    <owl:Class rdf:about="http://kmi.open.ac.uk/projects/smartproducts/ontologies/food.owl#KitchenTool">
+        <rdfs:subClassOf rdf:resource="http://kmi.open.ac.uk/projects/smartproducts/ontologies/product.owl#ProductizedDevice"/>
+    </owl:Class>
+    
+
+
+    <!-- http://kmi.open.ac.uk/projects/smartproducts/ontologies/food.owl#Leafy -->
+
+    <owl:Class rdf:about="http://kmi.open.ac.uk/projects/smartproducts/ontologies/food.owl#Leafy">
+        <rdfs:subClassOf rdf:resource="http://kmi.open.ac.uk/projects/smartproducts/ontologies/food.owl#Vegetables"/>
+    </owl:Class>
+    
+
+
+    <!-- http://kmi.open.ac.uk/projects/smartproducts/ontologies/food.owl#MainCourseRole -->
+
+    <owl:Class rdf:about="http://kmi.open.ac.uk/projects/smartproducts/ontologies/food.owl#MainCourseRole">
+        <rdfs:subClassOf rdf:resource="http://kmi.open.ac.uk/projects/smartproducts/ontologies/food.owl#MealCourseRole"/>
+    </owl:Class>
+    
+
+
+    <!-- http://kmi.open.ac.uk/projects/smartproducts/ontologies/food.owl#MassQuantityInOunces -->
+
+    <owl:Class rdf:about="http://kmi.open.ac.uk/projects/smartproducts/ontologies/food.owl#MassQuantityInOunces">
+        <rdfs:subClassOf rdf:resource="http://kmi.open.ac.uk/projects/smartproducts/ontologies/generic.owl#MassQuantity"/>
+    </owl:Class>
+    
+
+
+    <!-- http://kmi.open.ac.uk/projects/smartproducts/ontologies/food.owl#MassQuantityInPounds -->
+
+    <owl:Class rdf:about="http://kmi.open.ac.uk/projects/smartproducts/ontologies/food.owl#MassQuantityInPounds">
+        <rdfs:subClassOf rdf:resource="http://kmi.open.ac.uk/projects/smartproducts/ontologies/generic.owl#MassQuantity"/>
+    </owl:Class>
+    
+
+
+    <!-- http://kmi.open.ac.uk/projects/smartproducts/ontologies/food.owl#MaxCaloriesPreference -->
+
+    <owl:Class rdf:about="http://kmi.open.ac.uk/projects/smartproducts/ontologies/food.owl#MaxCaloriesPreference">
+        <rdfs:subClassOf rdf:resource="http://kmi.open.ac.uk/projects/smartproducts/ontologies/food.owl#NutritionPreference"/>
+    </owl:Class>
+    
+
+
+    <!-- http://kmi.open.ac.uk/projects/smartproducts/ontologies/food.owl#MaxCookingTimePreference -->
+
+    <owl:Class rdf:about="http://kmi.open.ac.uk/projects/smartproducts/ontologies/food.owl#MaxCookingTimePreference">
+        <rdfs:subClassOf rdf:resource="http://kmi.open.ac.uk/projects/smartproducts/ontologies/food.owl#RecipeCookingTimePreference"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://kmi.open.ac.uk/projects/smartproducts/ontologies/user.owl#preferenceValue"/>
+                <owl:allValuesFrom rdf:resource="http://www.w3.org/2006/time#DurationDescription"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://kmi.open.ac.uk/projects/smartproducts/ontologies/food.owl#MealContext -->
+
+    <owl:Class rdf:about="http://kmi.open.ac.uk/projects/smartproducts/ontologies/food.owl#MealContext">
+        <rdfs:subClassOf rdf:resource="http://kmi.open.ac.uk/projects/smartproducts/ontologies/generic.owl#SituationalContext"/>
+    </owl:Class>
+    
+
+
+    <!-- http://kmi.open.ac.uk/projects/smartproducts/ontologies/food.owl#MealCourseRole -->
+
+    <owl:Class rdf:about="http://kmi.open.ac.uk/projects/smartproducts/ontologies/food.owl#MealCourseRole">
+        <rdfs:subClassOf rdf:resource="http://www.loa-cnr.it/ontologies/DUL.owl#Role"/>
+    </owl:Class>
+    
+
+
+    <!-- http://kmi.open.ac.uk/projects/smartproducts/ontologies/food.owl#MealCourseType -->
+
+    <owl:Class rdf:about="http://kmi.open.ac.uk/projects/smartproducts/ontologies/food.owl#MealCourseType">
+        <rdfs:subClassOf rdf:resource="http://kmi.open.ac.uk/projects/smartproducts/ontologies/generic.owl#RoleType"/>
+    </owl:Class>
+    
+
+
+    <!-- http://kmi.open.ac.uk/projects/smartproducts/ontologies/food.owl#MealMaxNutritionEnergyPreference -->
+
+    <owl:Class rdf:about="http://kmi.open.ac.uk/projects/smartproducts/ontologies/food.owl#MealMaxNutritionEnergyPreference">
+        <rdfs:subClassOf rdf:resource="http://kmi.open.ac.uk/projects/smartproducts/ontologies/food.owl#MealNutritionEnergyPreference"/>
+    </owl:Class>
+    
+
+
+    <!-- http://kmi.open.ac.uk/projects/smartproducts/ontologies/food.owl#MealMinNutritionEnergyPreference -->
+
+    <owl:Class rdf:about="http://kmi.open.ac.uk/projects/smartproducts/ontologies/food.owl#MealMinNutritionEnergyPreference">
+        <rdfs:subClassOf rdf:resource="http://kmi.open.ac.uk/projects/smartproducts/ontologies/food.owl#MealNutritionEnergyPreference"/>
+    </owl:Class>
+    
+
+
+    <!-- http://kmi.open.ac.uk/projects/smartproducts/ontologies/food.owl#MealNutritionEnergyPreference -->
+
+    <owl:Class rdf:about="http://kmi.open.ac.uk/projects/smartproducts/ontologies/food.owl#MealNutritionEnergyPreference">
+        <rdfs:subClassOf rdf:resource="http://kmi.open.ac.uk/projects/smartproducts/ontologies/food.owl#MealNutritionPreference"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://kmi.open.ac.uk/projects/smartproducts/ontologies/user.owl#preferenceValue"/>
+                <owl:allValuesFrom rdf:resource="http://kmi.open.ac.uk/projects/smartproducts/ontologies/generic.owl#EnergyQuantity"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://kmi.open.ac.uk/projects/smartproducts/ontologies/food.owl#MealNutritionPreference -->
+
+    <owl:Class rdf:about="http://kmi.open.ac.uk/projects/smartproducts/ontologies/food.owl#MealNutritionPreference">
+        <rdfs:subClassOf rdf:resource="http://kmi.open.ac.uk/projects/smartproducts/ontologies/food.owl#MealPreference"/>
+    </owl:Class>
+    
+
+
+    <!-- http://kmi.open.ac.uk/projects/smartproducts/ontologies/food.owl#MealPlanningTask -->
+
+    <owl:Class rdf:about="http://kmi.open.ac.uk/projects/smartproducts/ontologies/food.owl#MealPlanningTask">
+        <rdfs:subClassOf rdf:resource="http://kmi.open.ac.uk/projects/smartproducts/ontologies/generic.owl#Task"/>
+    </owl:Class>
+    
+
+
+    <!-- http://kmi.open.ac.uk/projects/smartproducts/ontologies/food.owl#MealPreference -->
+
+    <owl:Class rdf:about="http://kmi.open.ac.uk/projects/smartproducts/ontologies/food.owl#MealPreference">
+        <rdfs:subClassOf rdf:resource="http://kmi.open.ac.uk/projects/smartproducts/ontologies/food.owl#FoodPreference"/>
+    </owl:Class>
+    
+
+
+    <!-- http://kmi.open.ac.uk/projects/smartproducts/ontologies/food.owl#MealStructure -->
+
+    <owl:Class rdf:about="http://kmi.open.ac.uk/projects/smartproducts/ontologies/food.owl#MealStructure">
+        <rdfs:subClassOf rdf:resource="http://www.loa-cnr.it/ontologies/DUL.owl#Description"/>
+    </owl:Class>
+    
+
+
+    <!-- http://kmi.open.ac.uk/projects/smartproducts/ontologies/food.owl#MealType -->
+
+    <owl:Class rdf:about="http://kmi.open.ac.uk/projects/smartproducts/ontologies/food.owl#MealType">
+        <rdfs:subClassOf rdf:resource="http://www.loa-cnr.it/ontologies/DUL.owl#SocialObjectAttribute"/>
+    </owl:Class>
+    
+
+
+    <!-- http://kmi.open.ac.uk/projects/smartproducts/ontologies/food.owl#MediterraneanCuisineRecipe -->
+
+    <owl:Class rdf:about="http://kmi.open.ac.uk/projects/smartproducts/ontologies/food.owl#MediterraneanCuisineRecipe">
+        <rdfs:subClassOf rdf:resource="http://kmi.open.ac.uk/projects/smartproducts/ontologies/food.owl#RegionalCuisineRecipe"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://kmi.open.ac.uk/projects/smartproducts/ontologies/food.owl#hasGeographicalProvenance"/>
+                <owl:hasValue rdf:resource="http://kmi.open.ac.uk/projects/smartproducts/ontologies/generic.owl#MediterraneanBasin"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://kmi.open.ac.uk/projects/smartproducts/ontologies/food.owl#Melons -->
+
+    <owl:Class rdf:about="http://kmi.open.ac.uk/projects/smartproducts/ontologies/food.owl#Melons">
+        <rdfs:subClassOf rdf:resource="http://kmi.open.ac.uk/projects/smartproducts/ontologies/food.owl#Fruits"/>
+    </owl:Class>
+    
+
+
+    <!-- http://kmi.open.ac.uk/projects/smartproducts/ontologies/food.owl#MexicanCuisineRecipe -->
+
+    <owl:Class rdf:about="http://kmi.open.ac.uk/projects/smartproducts/ontologies/food.owl#MexicanCuisineRecipe">
+        <rdfs:subClassOf rdf:resource="http://kmi.open.ac.uk/projects/smartproducts/ontologies/food.owl#RegionalCuisineRecipe"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://kmi.open.ac.uk/projects/smartproducts/ontologies/food.owl#hasGeographicalProvenance"/>
+                <owl:hasValue rdf:resource="http://kmi.open.ac.uk/projects/smartproducts/ontologies/generic.owl#Mexico"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://kmi.open.ac.uk/projects/smartproducts/ontologies/food.owl#MiddleEasternCuisineRecipe -->
+
+    <owl:Class rdf:about="http://kmi.open.ac.uk/projects/smartproducts/ontologies/food.owl#MiddleEasternCuisineRecipe">
+        <rdfs:subClassOf rdf:resource="http://kmi.open.ac.uk/projects/smartproducts/ontologies/food.owl#RegionalCuisineRecipe"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://kmi.open.ac.uk/projects/smartproducts/ontologies/food.owl#hasGeographicalProvenance"/>
+                <owl:hasValue rdf:resource="http://kmi.open.ac.uk/projects/smartproducts/ontologies/generic.owl#MiddleEast"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://kmi.open.ac.uk/projects/smartproducts/ontologies/food.owl#MoroccanCuisineRecipe -->
+
+    <owl:Class rdf:about="http://kmi.open.ac.uk/projects/smartproducts/ontologies/food.owl#MoroccanCuisineRecipe">
+        <rdfs:subClassOf rdf:resource="http://kmi.open.ac.uk/projects/smartproducts/ontologies/food.owl#MediterraneanCuisineRecipe"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://kmi.open.ac.uk/projects/smartproducts/ontologies/food.owl#hasGeographicalProvenance"/>
+                <owl:hasValue rdf:resource="http://kmi.open.ac.uk/projects/smartproducts/ontologies/generic.owl#Morocco"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://kmi.open.ac.uk/projects/smartproducts/ontologies/food.owl#Nutrient -->
+
+    <owl:Class rdf:about="http://kmi.open.ac.uk/projects/smartproducts/ontologies/food.owl#Nutrient">
+        <rdfs:subClassOf rdf:resource="http://kmi.open.ac.uk/projects/smartproducts/ontologies/generic.owl#Matter"/>
+    </owl:Class>
+    
+
+
+    <!-- http://kmi.open.ac.uk/projects/smartproducts/ontologies/food.owl#NutrientPortion -->
+
+    <owl:Class rdf:about="http://kmi.open.ac.uk/projects/smartproducts/ontologies/food.owl#NutrientPortion">
+        <rdfs:subClassOf rdf:resource="http://www.loa-cnr.it/ontologies/DUL.owl#Substance"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://kmi.open.ac.uk/projects/smartproducts/ontologies/generic.owl#madeOf"/>
+                <owl:allValuesFrom rdf:resource="http://kmi.open.ac.uk/projects/smartproducts/ontologies/food.owl#Nutrient"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://kmi.open.ac.uk/projects/smartproducts/ontologies/food.owl#NutritionPreference -->
+
+    <owl:Class rdf:about="http://kmi.open.ac.uk/projects/smartproducts/ontologies/food.owl#NutritionPreference">
+        <rdfs:subClassOf rdf:resource="http://kmi.open.ac.uk/projects/smartproducts/ontologies/food.owl#RecipePreference"/>
+    </owl:Class>
+    
+
+
+    <!-- http://kmi.open.ac.uk/projects/smartproducts/ontologies/food.owl#Nuts -->
+
+    <owl:Class rdf:about="http://kmi.open.ac.uk/projects/smartproducts/ontologies/food.owl#Nuts">
+        <rdfs:subClassOf rdf:resource="http://kmi.open.ac.uk/projects/smartproducts/ontologies/food.owl#ConcreteFoodItem"/>
+    </owl:Class>
+    
+
+
+    <!-- http://kmi.open.ac.uk/projects/smartproducts/ontologies/food.owl#Oven -->
+
+    <owl:Class rdf:about="http://kmi.open.ac.uk/projects/smartproducts/ontologies/food.owl#Oven">
+        <rdfs:subClassOf rdf:resource="http://kmi.open.ac.uk/projects/smartproducts/ontologies/food.owl#KitchenTool"/>
+    </owl:Class>
+    
+
+
+    <!-- http://kmi.open.ac.uk/projects/smartproducts/ontologies/food.owl#Party -->
+
+    <owl:Class rdf:about="http://kmi.open.ac.uk/projects/smartproducts/ontologies/food.owl#Party">
+        <rdfs:subClassOf rdf:resource="http://kmi.open.ac.uk/projects/smartproducts/ontologies/food.owl#MealContext"/>
+    </owl:Class>
+    
+
+
+    <!-- http://kmi.open.ac.uk/projects/smartproducts/ontologies/food.owl#PhilipsCookingGuide -->
+
+    <owl:Class rdf:about="http://kmi.open.ac.uk/projects/smartproducts/ontologies/food.owl#PhilipsCookingGuide">
+        <rdfs:subClassOf rdf:resource="http://kmi.open.ac.uk/projects/smartproducts/ontologies/food.owl#CookingGuide"/>
+    </owl:Class>
+    
+
+
+    <!-- http://kmi.open.ac.uk/projects/smartproducts/ontologies/food.owl#PhilipsCookingGuideXYZ -->
+
+    <owl:Class rdf:about="http://kmi.open.ac.uk/projects/smartproducts/ontologies/food.owl#PhilipsCookingGuideXYZ">
+        <rdfs:subClassOf rdf:resource="http://kmi.open.ac.uk/projects/smartproducts/ontologies/food.owl#PhilipsCookingGuide"/>
+    </owl:Class>
+    
+
+
+    <!-- http://kmi.open.ac.uk/projects/smartproducts/ontologies/food.owl#Recipe -->
+
+    <owl:Class rdf:about="http://kmi.open.ac.uk/projects/smartproducts/ontologies/food.owl#Recipe">
+        <rdfs:subClassOf rdf:resource="http://kmi.open.ac.uk/projects/smartproducts/ontologies/process.owl#WorkflowDefinition"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://kmi.open.ac.uk/projects/smartproducts/ontologies/food.owl#hasIngredient"/>
+                <owl:allValuesFrom rdf:resource="http://kmi.open.ac.uk/projects/smartproducts/ontologies/food.owl#IngredientPortion"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://kmi.open.ac.uk/projects/smartproducts/ontologies/process.owl#hasStep"/>
+                <owl:allValuesFrom rdf:resource="http://kmi.open.ac.uk/projects/smartproducts/ontologies/food.owl#CookingActivity"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://kmi.open.ac.uk/projects/smartproducts/ontologies/food.owl#hasIngredient"/>
+                <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minQualifiedCardinality>
+                <owl:onClass rdf:resource="http://kmi.open.ac.uk/projects/smartproducts/ontologies/food.owl#IngredientPortion"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment rdf:resource="http://kmi.open.ac.uk/projects/smartproducts/ontologies/food.owl#SideCourse"/>
+    </owl:Class>
+    
+
+
+    <!-- http://kmi.open.ac.uk/projects/smartproducts/ontologies/food.owl#RecipeCookingTimePreference -->
+
+    <owl:Class rdf:about="http://kmi.open.ac.uk/projects/smartproducts/ontologies/food.owl#RecipeCookingTimePreference">
+        <rdfs:subClassOf rdf:resource="http://kmi.open.ac.uk/projects/smartproducts/ontologies/food.owl#RecipePreference"/>
+    </owl:Class>
+    
+
+
+    <!-- http://kmi.open.ac.uk/projects/smartproducts/ontologies/food.owl#RecipePreference -->
+
+    <owl:Class rdf:about="http://kmi.open.ac.uk/projects/smartproducts/ontologies/food.owl#RecipePreference">
+        <rdfs:subClassOf rdf:resource="http://kmi.open.ac.uk/projects/smartproducts/ontologies/food.owl#FoodPreference"/>
+    </owl:Class>
+    
+
+
+    <!-- http://kmi.open.ac.uk/projects/smartproducts/ontologies/food.owl#RecipeTypePreference -->
+
+    <owl:Class rdf:about="http://kmi.open.ac.uk/projects/smartproducts/ontologies/food.owl#RecipeTypePreference">
+        <rdfs:subClassOf rdf:resource="http://kmi.open.ac.uk/projects/smartproducts/ontologies/food.owl#RecipePreference"/>
+    </owl:Class>
+    
+
+
+    <!-- http://kmi.open.ac.uk/projects/smartproducts/ontologies/food.owl#RegionalCuisineRecipe -->
+
+    <owl:Class rdf:about="http://kmi.open.ac.uk/projects/smartproducts/ontologies/food.owl#RegionalCuisineRecipe">
+        <rdfs:subClassOf rdf:resource="http://kmi.open.ac.uk/projects/smartproducts/ontologies/food.owl#Recipe"/>
+    </owl:Class>
+    
+
+
+    <!-- http://kmi.open.ac.uk/projects/smartproducts/ontologies/food.owl#Rooted -->
+
+    <owl:Class rdf:about="http://kmi.open.ac.uk/projects/smartproducts/ontologies/food.owl#Rooted">
+        <rdfs:subClassOf rdf:resource="http://kmi.open.ac.uk/projects/smartproducts/ontologies/food.owl#Vegetables"/>
+    </owl:Class>
+    
+
+
+    <!-- http://kmi.open.ac.uk/projects/smartproducts/ontologies/food.owl#ScottishCuisineRecipe -->
+
+    <owl:Class rdf:about="http://kmi.open.ac.uk/projects/smartproducts/ontologies/food.owl#ScottishCuisineRecipe">
+        <rdfs:subClassOf rdf:resource="http://kmi.open.ac.uk/projects/smartproducts/ontologies/food.owl#BritishCuisineRecipe"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://kmi.open.ac.uk/projects/smartproducts/ontologies/food.owl#hasGeographicalProvenance"/>
+                <owl:hasValue rdf:resource="http://kmi.open.ac.uk/projects/smartproducts/ontologies/generic.owl#Scotland"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://kmi.open.ac.uk/projects/smartproducts/ontologies/food.owl#SpanishCuisineRecipe -->
+
+    <owl:Class rdf:about="http://kmi.open.ac.uk/projects/smartproducts/ontologies/food.owl#SpanishCuisineRecipe">
+        <rdfs:subClassOf rdf:resource="http://kmi.open.ac.uk/projects/smartproducts/ontologies/food.owl#MediterraneanCuisineRecipe"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://kmi.open.ac.uk/projects/smartproducts/ontologies/food.owl#hasGeographicalProvenance"/>
+                <owl:hasValue rdf:resource="http://kmi.open.ac.uk/projects/smartproducts/ontologies/generic.owl#Spain"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://kmi.open.ac.uk/projects/smartproducts/ontologies/food.owl#Steamer -->
+
+    <owl:Class rdf:about="http://kmi.open.ac.uk/projects/smartproducts/ontologies/food.owl#Steamer">
+        <rdfs:subClassOf rdf:resource="http://kmi.open.ac.uk/projects/smartproducts/ontologies/food.owl#KitchenTool"/>
+    </owl:Class>
+    
+
+
+    <!-- http://kmi.open.ac.uk/projects/smartproducts/ontologies/food.owl#Store -->
+
+    <owl:Class rdf:about="http://kmi.open.ac.uk/projects/smartproducts/ontologies/food.owl#Store">
+        <rdfs:subClassOf rdf:resource="http://kmi.open.ac.uk/projects/smartproducts/ontologies/generic.owl#Building"/>
+    </owl:Class>
+    
+
+
+    <!-- http://kmi.open.ac.uk/projects/smartproducts/ontologies/food.owl#Supermarket -->
+
+    <owl:Class rdf:about="http://kmi.open.ac.uk/projects/smartproducts/ontologies/food.owl#Supermarket">
+        <rdfs:subClassOf rdf:resource="http://kmi.open.ac.uk/projects/smartproducts/ontologies/food.owl#Store"/>
+    </owl:Class>
+    
+
+
+    <!-- http://kmi.open.ac.uk/projects/smartproducts/ontologies/food.owl#ThaiCuisineRecipe -->
+
+    <owl:Class rdf:about="http://kmi.open.ac.uk/projects/smartproducts/ontologies/food.owl#ThaiCuisineRecipe">
+        <rdfs:subClassOf rdf:resource="http://kmi.open.ac.uk/projects/smartproducts/ontologies/food.owl#RegionalCuisineRecipe"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://kmi.open.ac.uk/projects/smartproducts/ontologies/food.owl#hasGeographicalProvenance"/>
+                <owl:hasValue rdf:resource="http://kmi.open.ac.uk/projects/smartproducts/ontologies/generic.owl#Thailand"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://kmi.open.ac.uk/projects/smartproducts/ontologies/food.owl#TimeOfDayMealType -->
+
+    <owl:Class rdf:about="http://kmi.open.ac.uk/projects/smartproducts/ontologies/food.owl#TimeOfDayMealType">
+        <rdfs:subClassOf rdf:resource="http://kmi.open.ac.uk/projects/smartproducts/ontologies/food.owl#MealType"/>
+    </owl:Class>
+    
+
+
+    <!-- http://kmi.open.ac.uk/projects/smartproducts/ontologies/food.owl#TreeFruit -->
+
+    <owl:Class rdf:about="http://kmi.open.ac.uk/projects/smartproducts/ontologies/food.owl#TreeFruit">
+        <rdfs:subClassOf rdf:resource="http://kmi.open.ac.uk/projects/smartproducts/ontologies/food.owl#Fruits"/>
+    </owl:Class>
+    
+
+
+    <!-- http://kmi.open.ac.uk/projects/smartproducts/ontologies/food.owl#TropicalFruit -->
+
+    <owl:Class rdf:about="http://kmi.open.ac.uk/projects/smartproducts/ontologies/food.owl#TropicalFruit">
+        <rdfs:subClassOf rdf:resource="http://kmi.open.ac.uk/projects/smartproducts/ontologies/food.owl#Fruits"/>
+    </owl:Class>
+    
+
+
+    <!-- http://kmi.open.ac.uk/projects/smartproducts/ontologies/food.owl#Vegetables -->
+
+    <owl:Class rdf:about="http://kmi.open.ac.uk/projects/smartproducts/ontologies/food.owl#Vegetables">
+        <rdfs:subClassOf rdf:resource="http://kmi.open.ac.uk/projects/smartproducts/ontologies/food.owl#ConcreteFoodItem"/>
+    </owl:Class>
+    
+
+
+    <!-- http://kmi.open.ac.uk/projects/smartproducts/ontologies/food.owl#VietnameseCuisineRecipe -->
+
+    <owl:Class rdf:about="http://kmi.open.ac.uk/projects/smartproducts/ontologies/food.owl#VietnameseCuisineRecipe">
+        <rdfs:subClassOf rdf:resource="http://kmi.open.ac.uk/projects/smartproducts/ontologies/food.owl#RegionalCuisineRecipe"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://kmi.open.ac.uk/projects/smartproducts/ontologies/food.owl#hasGeographicalProvenance"/>
+                <owl:hasValue rdf:resource="http://kmi.open.ac.uk/projects/smartproducts/ontologies/generic.owl#Vietnam"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://kmi.open.ac.uk/projects/smartproducts/ontologies/food.owl#VirtualFoodOrDrinkItem -->
+
+    <owl:Class rdf:about="http://kmi.open.ac.uk/projects/smartproducts/ontologies/food.owl#VirtualFoodOrDrinkItem">
+        <rdfs:subClassOf rdf:resource="http://kmi.open.ac.uk/projects/smartproducts/ontologies/food.owl#FoodOrDrinkItem"/>
+    </owl:Class>
+    
+
+
+    <!-- http://kmi.open.ac.uk/projects/smartproducts/ontologies/food.owl#VolumeQuantityInCups -->
+
+    <owl:Class rdf:about="http://kmi.open.ac.uk/projects/smartproducts/ontologies/food.owl#VolumeQuantityInCups">
+        <rdfs:subClassOf rdf:resource="http://kmi.open.ac.uk/projects/smartproducts/ontologies/generic.owl#VolumeQuantity"/>
+    </owl:Class>
+    
+
+
+    <!-- http://kmi.open.ac.uk/projects/smartproducts/ontologies/food.owl#VolumeQuantityInTableSpoons -->
+
+    <owl:Class rdf:about="http://kmi.open.ac.uk/projects/smartproducts/ontologies/food.owl#VolumeQuantityInTableSpoons">
+        <rdfs:subClassOf rdf:resource="http://kmi.open.ac.uk/projects/smartproducts/ontologies/generic.owl#VolumeQuantity"/>
+    </owl:Class>
+    
+
+
+    <!-- http://kmi.open.ac.uk/projects/smartproducts/ontologies/generic.owl#Assembly -->
+
+    <owl:Class rdf:about="http://kmi.open.ac.uk/projects/smartproducts/ontologies/generic.owl#Assembly"/>
+    
+
+
+    <!-- http://kmi.open.ac.uk/projects/smartproducts/ontologies/generic.owl#AssemblyComponent -->
+
+    <owl:Class rdf:about="http://kmi.open.ac.uk/projects/smartproducts/ontologies/generic.owl#AssemblyComponent"/>
+    
+
+
+    <!-- http://kmi.open.ac.uk/projects/smartproducts/ontologies/generic.owl#EnergyQuantity -->
+
+    <owl:Class rdf:about="http://kmi.open.ac.uk/projects/smartproducts/ontologies/generic.owl#EnergyQuantity"/>
+    
+
+
+    <!-- http://kmi.open.ac.uk/projects/smartproducts/ontologies/generic.owl#MassQuantity -->
+
+    <owl:Class rdf:about="http://kmi.open.ac.uk/projects/smartproducts/ontologies/generic.owl#MassQuantity"/>
+    
+
+
+    <!-- http://kmi.open.ac.uk/projects/smartproducts/ontologies/generic.owl#Matter -->
+
+    <owl:Class rdf:about="http://kmi.open.ac.uk/projects/smartproducts/ontologies/generic.owl#Matter"/>
+    
+
+
+    <!-- http://kmi.open.ac.uk/projects/smartproducts/ontologies/generic.owl#PhysicalEntityInSpace -->
+
+    <owl:Class rdf:about="http://kmi.open.ac.uk/projects/smartproducts/ontologies/generic.owl#PhysicalEntityInSpace"/>
+    
+
+
+    <!-- http://kmi.open.ac.uk/projects/smartproducts/ontologies/generic.owl#PhysicalGeographicEntity -->
+
+    <owl:Class rdf:about="http://kmi.open.ac.uk/projects/smartproducts/ontologies/generic.owl#PhysicalGeographicEntity"/>
+    
+
+
+    <!-- http://kmi.open.ac.uk/projects/smartproducts/ontologies/generic.owl#PhysicalQuantity -->
+
+    <owl:Class rdf:about="http://kmi.open.ac.uk/projects/smartproducts/ontologies/generic.owl#PhysicalQuantity"/>
+    
+
+
+    <!-- http://kmi.open.ac.uk/projects/smartproducts/ontologies/generic.owl#Temperature -->
+
+    <owl:Class rdf:about="http://kmi.open.ac.uk/projects/smartproducts/ontologies/generic.owl#Temperature"/>
+    
+
+
+    <!-- http://kmi.open.ac.uk/projects/smartproducts/ontologies/generic.owl#Thermometer -->
+
+    <owl:Class rdf:about="http://kmi.open.ac.uk/projects/smartproducts/ontologies/generic.owl#Thermometer"/>
+    
+
+
+    <!-- http://kmi.open.ac.uk/projects/smartproducts/ontologies/generic.owl#VolumeMeasurementUnit -->
+
+    <owl:Class rdf:about="http://kmi.open.ac.uk/projects/smartproducts/ontologies/generic.owl#VolumeMeasurementUnit"/>
+    
+
+
+    <!-- http://kmi.open.ac.uk/projects/smartproducts/ontologies/generic.owl#VolumeQuantity -->
+
+    <owl:Class rdf:about="http://kmi.open.ac.uk/projects/smartproducts/ontologies/generic.owl#VolumeQuantity"/>
+    
+
+
+    <!-- http://kmi.open.ac.uk/projects/smartproducts/ontologies/process.owl#ActivityDefinition -->
+
+    <owl:Class rdf:about="http://kmi.open.ac.uk/projects/smartproducts/ontologies/process.owl#ActivityDefinition"/>
+    
+
+
+    <!-- http://kmi.open.ac.uk/projects/smartproducts/ontologies/process.owl#WorkflowDefinition -->
+
+    <owl:Class rdf:about="http://kmi.open.ac.uk/projects/smartproducts/ontologies/process.owl#WorkflowDefinition"/>
+    
+
+
+    <!-- http://kmi.open.ac.uk/projects/smartproducts/ontologies/product.owl#Product -->
+
+    <owl:Class rdf:about="http://kmi.open.ac.uk/projects/smartproducts/ontologies/product.owl#Product"/>
+    
+
+
+    <!-- http://kmi.open.ac.uk/projects/smartproducts/ontologies/product.owl#ProductizedDevice -->
+
+    <owl:Class rdf:about="http://kmi.open.ac.uk/projects/smartproducts/ontologies/product.owl#ProductizedDevice"/>
+    
+
+
+    <!-- http://kmi.open.ac.uk/projects/smartproducts/ontologies/user.owl#Preference -->
+
+    <owl:Class rdf:about="http://kmi.open.ac.uk/projects/smartproducts/ontologies/user.owl#Preference"/>
+    
+
+
+    <!-- http://kmi.open.ac.uk/projects/smartproducts/ontologies/user.owl#User -->
+
+    <owl:Class rdf:about="http://kmi.open.ac.uk/projects/smartproducts/ontologies/user.owl#User"/>
+    
+
+
+    <!-- http://kmi.open.ac.uk/projects/smartproducts/ontologies/user.owl#UserProfile -->
+
+    <owl:Class rdf:about="http://kmi.open.ac.uk/projects/smartproducts/ontologies/user.owl#UserProfile"/>
+    
+
+
+    <!-- http://www.loa-cnr.it/ontologies/DUL.owl#PhysicalBody -->
+
+    <owl:Class rdf:about="http://www.loa-cnr.it/ontologies/DUL.owl#PhysicalBody"/>
+    
+
+
+    <!-- http://www.loa-cnr.it/ontologies/DUL.owl#Substance -->
+
+    <owl:Class rdf:about="http://www.loa-cnr.it/ontologies/DUL.owl#Substance"/>
+    
+
+
+    <!-- http://www.w3.org/2002/07/owl#Thing -->
+
+    <owl:Class rdf:about="http://www.w3.org/2002/07/owl#Thing"/>
+    
+
+
+    <!-- http://www.w3.org/2006/time#DayOfWeek -->
+
+    <owl:Class rdf:about="http://www.w3.org/2006/time#DayOfWeek"/>
+    
+
+
+    <!-- http://www.w3.org/2006/time#DurationDescription -->
+
+    <owl:Class rdf:about="http://www.w3.org/2006/time#DurationDescription"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://kmi.open.ac.uk/projects/smartproducts/ontologies/food.owl#Appetizer -->
+
+    <owl:Thing rdf:about="http://kmi.open.ac.uk/projects/smartproducts/ontologies/food.owl#Appetizer">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+        <rdf:type rdf:resource="http://kmi.open.ac.uk/projects/smartproducts/ontologies/food.owl#MealCourseType"/>
+    </owl:Thing>
+    
+
+
+    <!-- http://kmi.open.ac.uk/projects/smartproducts/ontologies/food.owl#Baking -->
+
+    <owl:Thing rdf:about="http://kmi.open.ac.uk/projects/smartproducts/ontologies/food.owl#Baking">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+        <rdf:type rdf:resource="http://kmi.open.ac.uk/projects/smartproducts/ontologies/food.owl#CookingTaskType"/>
+    </owl:Thing>
+    
+
+
+    <!-- http://kmi.open.ac.uk/projects/smartproducts/ontologies/food.owl#Boiling -->
+
+    <owl:Thing rdf:about="http://kmi.open.ac.uk/projects/smartproducts/ontologies/food.owl#Boiling">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+        <rdf:type rdf:resource="http://kmi.open.ac.uk/projects/smartproducts/ontologies/food.owl#CookingTaskType"/>
+    </owl:Thing>
+    
+
+
+    <!-- http://kmi.open.ac.uk/projects/smartproducts/ontologies/food.owl#Carbohydrate -->
+
+    <owl:Thing rdf:about="http://kmi.open.ac.uk/projects/smartproducts/ontologies/food.owl#Carbohydrate">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+        <rdf:type rdf:resource="http://kmi.open.ac.uk/projects/smartproducts/ontologies/food.owl#Nutrient"/>
+    </owl:Thing>
+    
+
+
+    <!-- http://kmi.open.ac.uk/projects/smartproducts/ontologies/food.owl#Cheese -->
+
+    <owl:NamedIndividual rdf:about="http://kmi.open.ac.uk/projects/smartproducts/ontologies/food.owl#Cheese"/>
+    
+
+
+    <!-- http://kmi.open.ac.uk/projects/smartproducts/ontologies/food.owl#Cholesterol -->
+
+    <owl:Thing rdf:about="http://kmi.open.ac.uk/projects/smartproducts/ontologies/food.owl#Cholesterol">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+        <rdf:type rdf:resource="http://kmi.open.ac.uk/projects/smartproducts/ontologies/food.owl#Nutrient"/>
+    </owl:Thing>
+    
+
+
+    <!-- http://kmi.open.ac.uk/projects/smartproducts/ontologies/food.owl#Cutting -->
+
+    <owl:Thing rdf:about="http://kmi.open.ac.uk/projects/smartproducts/ontologies/food.owl#Cutting">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+        <rdf:type rdf:resource="http://kmi.open.ac.uk/projects/smartproducts/ontologies/food.owl#CookingTaskType"/>
+    </owl:Thing>
+    
+
+
+    <!-- http://kmi.open.ac.uk/projects/smartproducts/ontologies/food.owl#DairyFreeDiet -->
+
+    <owl:Thing rdf:about="http://kmi.open.ac.uk/projects/smartproducts/ontologies/food.owl#DairyFreeDiet">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+        <rdf:type rdf:resource="http://kmi.open.ac.uk/projects/smartproducts/ontologies/food.owl#DietType"/>
+    </owl:Thing>
+    
+
+
+    <!-- http://kmi.open.ac.uk/projects/smartproducts/ontologies/food.owl#DairyProduct -->
+
+    <owl:NamedIndividual rdf:about="http://kmi.open.ac.uk/projects/smartproducts/ontologies/food.owl#DairyProduct"/>
+    
+
+
+    <!-- http://kmi.open.ac.uk/projects/smartproducts/ontologies/food.owl#Dessert -->
+
+    <owl:NamedIndividual rdf:about="http://kmi.open.ac.uk/projects/smartproducts/ontologies/food.owl#Dessert">
+        <rdf:type rdf:resource="http://kmi.open.ac.uk/projects/smartproducts/ontologies/food.owl#MealCourseType"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://kmi.open.ac.uk/projects/smartproducts/ontologies/food.owl#DiabeticDiet -->
+
+    <owl:Thing rdf:about="http://kmi.open.ac.uk/projects/smartproducts/ontologies/food.owl#DiabeticDiet">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+        <rdf:type rdf:resource="http://kmi.open.ac.uk/projects/smartproducts/ontologies/food.owl#DietType"/>
+    </owl:Thing>
+    
+
+
+    <!-- http://kmi.open.ac.uk/projects/smartproducts/ontologies/food.owl#Drinks -->
+
+    <owl:NamedIndividual rdf:about="http://kmi.open.ac.uk/projects/smartproducts/ontologies/food.owl#Drinks">
+        <rdf:type rdf:resource="http://kmi.open.ac.uk/projects/smartproducts/ontologies/food.owl#MealCourseType"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://kmi.open.ac.uk/projects/smartproducts/ontologies/food.owl#Easy -->
+
+    <owl:Thing rdf:about="http://kmi.open.ac.uk/projects/smartproducts/ontologies/food.owl#Easy">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+        <rdf:type rdf:resource="http://kmi.open.ac.uk/projects/smartproducts/ontologies/food.owl#CookingDifficultyCategory"/>
+    </owl:Thing>
+    
+
+
+    <!-- http://kmi.open.ac.uk/projects/smartproducts/ontologies/food.owl#EggFreeDiet -->
+
+    <owl:Thing rdf:about="http://kmi.open.ac.uk/projects/smartproducts/ontologies/food.owl#EggFreeDiet">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+        <rdf:type rdf:resource="http://kmi.open.ac.uk/projects/smartproducts/ontologies/food.owl#DietType"/>
+    </owl:Thing>
+    
+
+
+    <!-- http://kmi.open.ac.uk/projects/smartproducts/ontologies/food.owl#Expert -->
+
+    <owl:Thing rdf:about="http://kmi.open.ac.uk/projects/smartproducts/ontologies/food.owl#Expert">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+        <rdf:type rdf:resource="http://kmi.open.ac.uk/projects/smartproducts/ontologies/food.owl#CookingDifficultyCategory"/>
+    </owl:Thing>
+    
+
+
+    <!-- http://kmi.open.ac.uk/projects/smartproducts/ontologies/food.owl#Fat -->
+
+    <owl:Thing rdf:about="http://kmi.open.ac.uk/projects/smartproducts/ontologies/food.owl#Fat">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+        <rdf:type rdf:resource="http://kmi.open.ac.uk/projects/smartproducts/ontologies/food.owl#Nutrient"/>
+    </owl:Thing>
+    
+
+
+    <!-- http://kmi.open.ac.uk/projects/smartproducts/ontologies/food.owl#FishProduct -->
+
+    <owl:NamedIndividual rdf:about="http://kmi.open.ac.uk/projects/smartproducts/ontologies/food.owl#FishProduct"/>
+    
+
+
+    <!-- http://kmi.open.ac.uk/projects/smartproducts/ontologies/food.owl#Food -->
+
+    <owl:NamedIndividual rdf:about="http://kmi.open.ac.uk/projects/smartproducts/ontologies/food.owl#Food"/>
+    
+
+
+    <!-- http://kmi.open.ac.uk/projects/smartproducts/ontologies/food.owl#FoodOrDrink -->
+
+    <owl:NamedIndividual rdf:about="http://kmi.open.ac.uk/projects/smartproducts/ontologies/food.owl#FoodOrDrink"/>
+    
+
+
+    <!-- http://kmi.open.ac.uk/projects/smartproducts/ontologies/food.owl#Frying -->
+
+    <owl:Thing rdf:about="http://kmi.open.ac.uk/projects/smartproducts/ontologies/food.owl#Frying">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+        <rdf:type rdf:resource="http://kmi.open.ac.uk/projects/smartproducts/ontologies/food.owl#CookingTaskType"/>
+    </owl:Thing>
+    
+
+
+    <!-- http://kmi.open.ac.uk/projects/smartproducts/ontologies/food.owl#GlutenFreeDiet -->
+
+    <owl:Thing rdf:about="http://kmi.open.ac.uk/projects/smartproducts/ontologies/food.owl#GlutenFreeDiet">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+        <rdf:type rdf:resource="http://kmi.open.ac.uk/projects/smartproducts/ontologies/food.owl#DietType"/>
+    </owl:Thing>
+    
+
+
+    <!-- http://kmi.open.ac.uk/projects/smartproducts/ontologies/food.owl#Gorgonzola -->
+
+    <owl:NamedIndividual rdf:about="http://kmi.open.ac.uk/projects/smartproducts/ontologies/food.owl#Gorgonzola"/>
+    
+
+
+    <!-- http://kmi.open.ac.uk/projects/smartproducts/ontologies/food.owl#Grapefruit -->
+
+    <owl:NamedIndividual rdf:about="http://kmi.open.ac.uk/projects/smartproducts/ontologies/food.owl#Grapefruit"/>
+    
+
+
+    <!-- http://kmi.open.ac.uk/projects/smartproducts/ontologies/food.owl#Ingredient -->
+
+    <owl:NamedIndividual rdf:about="http://kmi.open.ac.uk/projects/smartproducts/ontologies/food.owl#Ingredient"/>
+    
+
+
+    <!-- http://kmi.open.ac.uk/projects/smartproducts/ontologies/food.owl#Lemon -->
+
+    <owl:NamedIndividual rdf:about="http://kmi.open.ac.uk/projects/smartproducts/ontologies/food.owl#Lemon">
+        <treat rdf:resource="http://kmi.open.ac.uk/projects/smartproducts/ontologies/food.owl#Scurvy"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://kmi.open.ac.uk/projects/smartproducts/ontologies/food.owl#LowFatDiet -->
+
+    <owl:Thing rdf:about="http://kmi.open.ac.uk/projects/smartproducts/ontologies/food.owl#LowFatDiet">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+        <rdf:type rdf:resource="http://kmi.open.ac.uk/projects/smartproducts/ontologies/food.owl#DietType"/>
+    </owl:Thing>
+    
+
+
+    <!-- http://kmi.open.ac.uk/projects/smartproducts/ontologies/food.owl#LowInSaltDiet -->
+
+    <owl:Thing rdf:about="http://kmi.open.ac.uk/projects/smartproducts/ontologies/food.owl#LowInSaltDiet">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+        <rdf:type rdf:resource="http://kmi.open.ac.uk/projects/smartproducts/ontologies/food.owl#DietType"/>
+    </owl:Thing>
+    
+
+
+    <!-- http://kmi.open.ac.uk/projects/smartproducts/ontologies/food.owl#MainCourse -->
+
+    <owl:Thing rdf:about="http://kmi.open.ac.uk/projects/smartproducts/ontologies/food.owl#MainCourse">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+        <rdf:type rdf:resource="http://kmi.open.ac.uk/projects/smartproducts/ontologies/food.owl#MealCourseType"/>
+    </owl:Thing>
+    
+
+
+    <!-- http://kmi.open.ac.uk/projects/smartproducts/ontologies/food.owl#MeatProduct -->
+
+    <owl:NamedIndividual rdf:about="http://kmi.open.ac.uk/projects/smartproducts/ontologies/food.owl#MeatProduct"/>
+    
+
+
+    <!-- http://kmi.open.ac.uk/projects/smartproducts/ontologies/food.owl#Mexico -->
+
+    <owl:NamedIndividual rdf:about="http://kmi.open.ac.uk/projects/smartproducts/ontologies/food.owl#Mexico">
+        <largestProducer rdf:resource="http://kmi.open.ac.uk/projects/smartproducts/ontologies/food.owl#Lemon"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://kmi.open.ac.uk/projects/smartproducts/ontologies/food.owl#Moderate -->
+
+    <owl:Thing rdf:about="http://kmi.open.ac.uk/projects/smartproducts/ontologies/food.owl#Moderate">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+        <rdf:type rdf:resource="http://kmi.open.ac.uk/projects/smartproducts/ontologies/food.owl#CookingDifficultyCategory"/>
+    </owl:Thing>
+    
+
+
+    <!-- http://kmi.open.ac.uk/projects/smartproducts/ontologies/food.owl#NutFreeDiet -->
+
+    <owl:Thing rdf:about="http://kmi.open.ac.uk/projects/smartproducts/ontologies/food.owl#NutFreeDiet">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+        <rdf:type rdf:resource="http://kmi.open.ac.uk/projects/smartproducts/ontologies/food.owl#DietType"/>
+    </owl:Thing>
+    
+
+
+    <!-- http://kmi.open.ac.uk/projects/smartproducts/ontologies/food.owl#NutritionalEnergy -->
+
+    <owl:Thing rdf:about="http://kmi.open.ac.uk/projects/smartproducts/ontologies/food.owl#NutritionalEnergy">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+        <rdf:type rdf:resource="http://kmi.open.ac.uk/projects/smartproducts/ontologies/food.owl#Nutrient"/>
+    </owl:Thing>
+    
+
+
+    <!-- http://kmi.open.ac.uk/projects/smartproducts/ontologies/food.owl#Orange -->
+
+    <owl:NamedIndividual rdf:about="http://kmi.open.ac.uk/projects/smartproducts/ontologies/food.owl#Orange">
+        <treat rdf:resource="http://kmi.open.ac.uk/projects/smartproducts/ontologies/food.owl#Scurvy"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://kmi.open.ac.uk/projects/smartproducts/ontologies/food.owl#Proteins -->
+
+    <owl:Thing rdf:about="http://kmi.open.ac.uk/projects/smartproducts/ontologies/food.owl#Proteins">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+        <rdf:type rdf:resource="http://kmi.open.ac.uk/projects/smartproducts/ontologies/food.owl#Nutrient"/>
+    </owl:Thing>
+    
+
+
+    <!-- http://kmi.open.ac.uk/projects/smartproducts/ontologies/food.owl#Ram -->
+
+    <owl:NamedIndividual rdf:about="http://kmi.open.ac.uk/projects/smartproducts/ontologies/food.owl#Ram">
+        <likes rdf:resource="http://kmi.open.ac.uk/projects/smartproducts/ontologies/food.owl#Lemon"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://kmi.open.ac.uk/projects/smartproducts/ontologies/food.owl#Sauce -->
+
+    <owl:NamedIndividual rdf:about="http://kmi.open.ac.uk/projects/smartproducts/ontologies/food.owl#Sauce"/>
+    
+
+
+    <!-- http://kmi.open.ac.uk/projects/smartproducts/ontologies/food.owl#Scurvy -->
+
+    <owl:NamedIndividual rdf:about="http://kmi.open.ac.uk/projects/smartproducts/ontologies/food.owl#Scurvy"/>
+    
+
+
+    <!-- http://kmi.open.ac.uk/projects/smartproducts/ontologies/food.owl#SideCourse -->
+
+    <owl:Thing rdf:about="http://kmi.open.ac.uk/projects/smartproducts/ontologies/food.owl#SideCourse">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+        <rdf:type rdf:resource="http://kmi.open.ac.uk/projects/smartproducts/ontologies/food.owl#MealCourseType"/>
+    </owl:Thing>
+    
+
+
+    <!-- http://kmi.open.ac.uk/projects/smartproducts/ontologies/food.owl#Sodium -->
+
+    <owl:Thing rdf:about="http://kmi.open.ac.uk/projects/smartproducts/ontologies/food.owl#Sodium">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+        <rdf:type rdf:resource="http://kmi.open.ac.uk/projects/smartproducts/ontologies/food.owl#Nutrient"/>
+    </owl:Thing>
+    
+
+
+    <!-- http://kmi.open.ac.uk/projects/smartproducts/ontologies/food.owl#Soup -->
+
+    <owl:Thing rdf:about="http://kmi.open.ac.uk/projects/smartproducts/ontologies/food.owl#Soup">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+        <rdf:type rdf:resource="http://kmi.open.ac.uk/projects/smartproducts/ontologies/food.owl#MealCourseType"/>
+    </owl:Thing>
+    
+
+
+    <!-- http://kmi.open.ac.uk/projects/smartproducts/ontologies/food.owl#Stilton -->
+
+    <owl:NamedIndividual rdf:about="http://kmi.open.ac.uk/projects/smartproducts/ontologies/food.owl#Stilton"/>
+    
+
+
+    <!-- http://kmi.open.ac.uk/projects/smartproducts/ontologies/food.owl#TESCO -->
+
+    <owl:NamedIndividual rdf:about="http://kmi.open.ac.uk/projects/smartproducts/ontologies/food.owl#TESCO">
+        <rdf:type rdf:resource="http://kmi.open.ac.uk/projects/smartproducts/ontologies/food.owl#Supermarket"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://kmi.open.ac.uk/projects/smartproducts/ontologies/food.owl#Turkey -->
+
+    <owl:NamedIndividual rdf:about="http://kmi.open.ac.uk/projects/smartproducts/ontologies/food.owl#Turkey"/>
+    
+
+
+    <!-- http://kmi.open.ac.uk/projects/smartproducts/ontologies/food.owl#VeganDiet -->
+
+    <owl:Thing rdf:about="http://kmi.open.ac.uk/projects/smartproducts/ontologies/food.owl#VeganDiet">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+        <rdf:type rdf:resource="http://kmi.open.ac.uk/projects/smartproducts/ontologies/food.owl#DietType"/>
+    </owl:Thing>
+    
+
+
+    <!-- http://kmi.open.ac.uk/projects/smartproducts/ontologies/food.owl#VegetableOil -->
+
+    <owl:NamedIndividual rdf:about="http://kmi.open.ac.uk/projects/smartproducts/ontologies/food.owl#VegetableOil"/>
+    
+
+
+    <!-- http://kmi.open.ac.uk/projects/smartproducts/ontologies/food.owl#VegetarianDiet -->
+
+    <owl:Thing rdf:about="http://kmi.open.ac.uk/projects/smartproducts/ontologies/food.owl#VegetarianDiet">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+        <rdf:type rdf:resource="http://kmi.open.ac.uk/projects/smartproducts/ontologies/food.owl#DietType"/>
+    </owl:Thing>
+    
+
+
+    <!-- http://kmi.open.ac.uk/projects/smartproducts/ontologies/food.owl#cup -->
+
+    <owl:NamedIndividual rdf:about="http://kmi.open.ac.uk/projects/smartproducts/ontologies/food.owl#cup">
+        <rdf:type rdf:resource="http://kmi.open.ac.uk/projects/smartproducts/ontologies/generic.owl#VolumeMeasurementUnit"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://kmi.open.ac.uk/projects/smartproducts/ontologies/generic.owl#Caribbean -->
+
+    <owl:Thing rdf:about="http://kmi.open.ac.uk/projects/smartproducts/ontologies/generic.owl#Caribbean">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    </owl:Thing>
+    
+
+
+    <!-- http://kmi.open.ac.uk/projects/smartproducts/ontologies/generic.owl#China -->
+
+    <owl:Thing rdf:about="http://kmi.open.ac.uk/projects/smartproducts/ontologies/generic.owl#China">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    </owl:Thing>
+    
+
+
+    <!-- http://kmi.open.ac.uk/projects/smartproducts/ontologies/generic.owl#France -->
+
+    <owl:Thing rdf:about="http://kmi.open.ac.uk/projects/smartproducts/ontologies/generic.owl#France">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    </owl:Thing>
+    
+
+
+    <!-- http://kmi.open.ac.uk/projects/smartproducts/ontologies/generic.owl#Germany -->
+
+    <owl:Thing rdf:about="http://kmi.open.ac.uk/projects/smartproducts/ontologies/generic.owl#Germany">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    </owl:Thing>
+    
+
+
+    <!-- http://kmi.open.ac.uk/projects/smartproducts/ontologies/generic.owl#Greece -->
+
+    <owl:Thing rdf:about="http://kmi.open.ac.uk/projects/smartproducts/ontologies/generic.owl#Greece">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    </owl:Thing>
+    
+
+
+    <!-- http://kmi.open.ac.uk/projects/smartproducts/ontologies/generic.owl#India -->
+
+    <owl:Thing rdf:about="http://kmi.open.ac.uk/projects/smartproducts/ontologies/generic.owl#India">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    </owl:Thing>
+    
+
+
+    <!-- http://kmi.open.ac.uk/projects/smartproducts/ontologies/generic.owl#Ireland -->
+
+    <owl:Thing rdf:about="http://kmi.open.ac.uk/projects/smartproducts/ontologies/generic.owl#Ireland">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    </owl:Thing>
+    
+
+
+    <!-- http://kmi.open.ac.uk/projects/smartproducts/ontologies/generic.owl#Italy -->
+
+    <owl:Thing rdf:about="http://kmi.open.ac.uk/projects/smartproducts/ontologies/generic.owl#Italy">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    </owl:Thing>
+    
+
+
+    <!-- http://kmi.open.ac.uk/projects/smartproducts/ontologies/generic.owl#Japan -->
+
+    <owl:Thing rdf:about="http://kmi.open.ac.uk/projects/smartproducts/ontologies/generic.owl#Japan">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    </owl:Thing>
+    
+
+
+    <!-- http://kmi.open.ac.uk/projects/smartproducts/ontologies/generic.owl#MediterraneanBasin -->
+
+    <owl:Thing rdf:about="http://kmi.open.ac.uk/projects/smartproducts/ontologies/generic.owl#MediterraneanBasin">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    </owl:Thing>
+    
+
+
+    <!-- http://kmi.open.ac.uk/projects/smartproducts/ontologies/generic.owl#Mexico -->
+
+    <owl:Thing rdf:about="http://kmi.open.ac.uk/projects/smartproducts/ontologies/generic.owl#Mexico">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    </owl:Thing>
+    
+
+
+    <!-- http://kmi.open.ac.uk/projects/smartproducts/ontologies/generic.owl#MiddleEast -->
+
+    <owl:Thing rdf:about="http://kmi.open.ac.uk/projects/smartproducts/ontologies/generic.owl#MiddleEast">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    </owl:Thing>
+    
+
+
+    <!-- http://kmi.open.ac.uk/projects/smartproducts/ontologies/generic.owl#Morocco -->
+
+    <owl:Thing rdf:about="http://kmi.open.ac.uk/projects/smartproducts/ontologies/generic.owl#Morocco">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    </owl:Thing>
+    
+
+
+    <!-- http://kmi.open.ac.uk/projects/smartproducts/ontologies/generic.owl#Scotland -->
+
+    <owl:Thing rdf:about="http://kmi.open.ac.uk/projects/smartproducts/ontologies/generic.owl#Scotland">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    </owl:Thing>
+    
+
+
+    <!-- http://kmi.open.ac.uk/projects/smartproducts/ontologies/generic.owl#Spain -->
+
+    <owl:Thing rdf:about="http://kmi.open.ac.uk/projects/smartproducts/ontologies/generic.owl#Spain">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    </owl:Thing>
+    
+
+
+    <!-- http://kmi.open.ac.uk/projects/smartproducts/ontologies/generic.owl#Thailand -->
+
+    <owl:Thing rdf:about="http://kmi.open.ac.uk/projects/smartproducts/ontologies/generic.owl#Thailand">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    </owl:Thing>
+    
+
+
+    <!-- http://kmi.open.ac.uk/projects/smartproducts/ontologies/generic.owl#UK -->
+
+    <owl:Thing rdf:about="http://kmi.open.ac.uk/projects/smartproducts/ontologies/generic.owl#UK">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    </owl:Thing>
+    
+
+
+    <!-- http://kmi.open.ac.uk/projects/smartproducts/ontologies/generic.owl#USA -->
+
+    <owl:Thing rdf:about="http://kmi.open.ac.uk/projects/smartproducts/ontologies/generic.owl#USA">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    </owl:Thing>
+    
+
+
+    <!-- http://kmi.open.ac.uk/projects/smartproducts/ontologies/generic.owl#Vietnam -->
+
+    <owl:Thing rdf:about="http://kmi.open.ac.uk/projects/smartproducts/ontologies/generic.owl#Vietnam">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    </owl:Thing>
+    
+
+
+    <!-- http://kmi.open.ac.uk/projects/smartproducts/ontologies/generic.owl#calorie -->
+
+    <owl:NamedIndividual rdf:about="http://kmi.open.ac.uk/projects/smartproducts/ontologies/generic.owl#calorie"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotations
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <rdf:Description rdf:about="http://kmi.open.ac.uk/projects/smartproducts/ontologies/food.owl#FingerFood">
+        <rdfs:comment rdf:resource="http://kmi.open.ac.uk/projects/smartproducts/ontologies/food.owl#SideCourse"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://kmi.open.ac.uk/projects/smartproducts/ontologies/food.owl#Fish">
+        <rdfs:comment rdf:resource="http://kmi.open.ac.uk/projects/smartproducts/ontologies/food.owl#SideCourse"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://kmi.open.ac.uk/projects/smartproducts/ontologies/food.owl#RecipeDescription">
+        <rdfs:comment rdf:resource="http://kmi.open.ac.uk/projects/smartproducts/ontologies/food.owl#SideCourse"/>
+    </rdf:Description>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.2.5.20160517-0735) https://github.com/owlcs/owlapi -->
+

@@ -1,0 +1,539 @@
+<?xml version="1.0"?>
+
+
+<!DOCTYPE rdf:RDF [
+    <!ENTITY w3ctime "http://www.w3.org/2006/time#" >
+    <!ENTITY owl "http://www.w3.org/2002/07/owl#" >
+    <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
+    <!ENTITY ssn "http://purl.oclc.org/NET/ssnx/ssn#" >
+    <!ENTITY owl2xml "http://www.w3.org/2006/12/owl2-xml#" >
+    <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
+    <!ENTITY dul "http://www.loa-cnr.it/ontologies/DUL.owl#" >
+    <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
+    <!ENTITY protege "http://protege.stanford.edu/plugins/owl/protege#" >
+    <!ENTITY xsp "http://www.owl-ontologies.com/2005/08/07/xsp.owl#" >
+    <!ENTITY user "http://kmi.open.ac.uk/projects/smartproducts/ontologies/user.owl#" >
+    <!ENTITY sptime "http://kmi.open.ac.uk/projects/smartproducts/ontologies/time.owl#" >
+    <!ENTITY generic "http://kmi.open.ac.uk/projects/smartproducts/ontologies/generic.owl#" >
+    <!ENTITY product "http://kmi.open.ac.uk/projects/smartproducts/ontologies/product.owl#" >
+    <!ENTITY context "http://kmi.open.ac.uk/projects/smartproducts/ontologies/context.owl#" >
+]>
+
+
+<rdf:RDF xmlns="http://kmi.open.ac.uk/projects/smartproducts/ontologies/user.owl#"
+     xml:base="http://kmi.open.ac.uk/projects/smartproducts/ontologies/user.owl"
+     xmlns:generic="http://kmi.open.ac.uk/projects/smartproducts/ontologies/generic.owl#"
+     xmlns:protege="http://protege.stanford.edu/plugins/owl/protege#"
+     xmlns:xsp="http://www.owl-ontologies.com/2005/08/07/xsp.owl#"
+     xmlns:ssn="http://purl.oclc.org/NET/ssnx/ssn#"
+     xmlns:product="http://kmi.open.ac.uk/projects/smartproducts/ontologies/product.owl#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:w3ctime="http://www.w3.org/2006/time#"
+     xmlns:owl2xml="http://www.w3.org/2006/12/owl2-xml#"
+     xmlns:dul="http://www.loa-cnr.it/ontologies/DUL.owl#"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:context="http://kmi.open.ac.uk/projects/smartproducts/ontologies/context.owl#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:user="http://kmi.open.ac.uk/projects/smartproducts/ontologies/user.owl#"
+     xmlns:sptime="http://kmi.open.ac.uk/projects/smartproducts/ontologies/time.owl#">
+    <owl:Ontology rdf:about="http://kmi.open.ac.uk/projects/smartproducts/ontologies/user.owl">
+        <rdfs:comment>Contains concepts related to the user and user profile.</rdfs:comment>
+        <owl:imports rdf:resource="http://kmi.open.ac.uk/projects/smartproducts/ontologies/generic.owl"/>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <owl:AnnotationProperty rdf:about="&rdfs;comment"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://kmi.open.ac.uk/projects/smartproducts/ontologies/user.owl#hasCondition -->
+
+    <owl:ObjectProperty rdf:about="&user;hasCondition">
+        <rdfs:domain rdf:resource="&user;ConditionalProfile"/>
+        <rdfs:range rdf:resource="&dul;Situation"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://kmi.open.ac.uk/projects/smartproducts/ontologies/user.owl#hasDetailLevel -->
+
+    <owl:ObjectProperty rdf:about="&user;hasDetailLevel">
+        <rdfs:range rdf:resource="&user;DetailLevel"/>
+        <rdfs:domain rdf:resource="&user;InteractionOption"/>
+        <rdfs:subPropertyOf rdf:resource="&dul;hasRegion"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://kmi.open.ac.uk/projects/smartproducts/ontologies/user.owl#hasInteractionMediaType -->
+
+    <owl:ObjectProperty rdf:about="&user;hasInteractionMediaType">
+        <rdfs:range rdf:resource="&user;InteractionMediaType"/>
+        <rdfs:domain rdf:resource="&user;InteractionOption"/>
+        <rdfs:subPropertyOf rdf:resource="&dul;hasRegion"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://kmi.open.ac.uk/projects/smartproducts/ontologies/user.owl#hasInteractionOption -->
+
+    <owl:ObjectProperty rdf:about="&user;hasInteractionOption">
+        <rdfs:domain rdf:resource="&user;InteractionMessage"/>
+        <rdfs:range rdf:resource="&user;InteractionOption"/>
+        <rdfs:subPropertyOf rdf:resource="&dul;isClassifiedBy"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://kmi.open.ac.uk/projects/smartproducts/ontologies/user.owl#hasOwner -->
+
+    <owl:ObjectProperty rdf:about="&user;hasOwner">
+        <rdfs:range rdf:resource="&dul;SocialAgent"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://kmi.open.ac.uk/projects/smartproducts/ontologies/user.owl#hasPreference -->
+
+    <owl:ObjectProperty rdf:about="&user;hasPreference">
+        <rdfs:range rdf:resource="&user;Preference"/>
+        <rdfs:domain rdf:resource="&user;User"/>
+        <rdfs:subPropertyOf rdf:resource="&user;hasProfile"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://kmi.open.ac.uk/projects/smartproducts/ontologies/user.owl#hasPreferenceCriterion -->
+
+    <owl:ObjectProperty rdf:about="&user;hasPreferenceCriterion">
+        <rdfs:domain rdf:resource="&user;Preference"/>
+        <rdfs:range rdf:resource="&user;PreferenceCriterion"/>
+        <rdfs:subPropertyOf rdf:resource="&dul;hasRegion"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://kmi.open.ac.uk/projects/smartproducts/ontologies/user.owl#hasProfile -->
+
+    <owl:ObjectProperty rdf:about="&user;hasProfile">
+        <rdfs:domain rdf:resource="&user;User"/>
+        <rdfs:range rdf:resource="&user;UserProfile"/>
+        <rdfs:subPropertyOf rdf:resource="&dul;hasQuality"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://kmi.open.ac.uk/projects/smartproducts/ontologies/user.owl#hasUser -->
+
+    <owl:ObjectProperty rdf:about="&user;hasUser">
+        <rdfs:range rdf:resource="&user;User"/>
+        <rdfs:domain rdf:resource="&user;UserAwareAgent"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://kmi.open.ac.uk/projects/smartproducts/ontologies/user.owl#hasUserRole -->
+
+    <owl:ObjectProperty rdf:about="&user;hasUserRole">
+        <rdfs:domain rdf:resource="&user;User"/>
+        <rdfs:range rdf:resource="&user;UserRole"/>
+        <rdfs:subPropertyOf rdf:resource="&dul;hasRole"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://kmi.open.ac.uk/projects/smartproducts/ontologies/user.owl#preferenceValue -->
+
+    <owl:ObjectProperty rdf:about="&user;preferenceValue">
+        <rdfs:domain rdf:resource="&user;Preference"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://kmi.open.ac.uk/projects/smartproducts/ontologies/user.owl#preferenceValueRejected -->
+
+    <owl:ObjectProperty rdf:about="&user;preferenceValueRejected">
+        <rdfs:domain rdf:resource="&user;Preference"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://kmi.open.ac.uk/projects/smartproducts/ontologies/user.owl#usesLanguage -->
+
+    <owl:ObjectProperty rdf:about="&user;usesLanguage">
+        <rdfs:domain rdf:resource="&user;InteractionOption"/>
+        <rdfs:range rdf:resource="&user;LanguageInteractionMode"/>
+        <rdfs:subPropertyOf rdf:resource="&dul;hasRegion"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://kmi.open.ac.uk/projects/smartproducts/ontologies/user.owl#hasEMailAddress -->
+
+    <owl:DatatypeProperty rdf:about="&user;hasEMailAddress">
+        <rdfs:domain rdf:resource="&user;UserProfile"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://kmi.open.ac.uk/projects/smartproducts/ontologies/user.owl#hasInteractionMessageFile -->
+
+    <owl:DatatypeProperty rdf:about="&user;hasInteractionMessageFile">
+        <rdfs:domain rdf:resource="&user;InteractionOption"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://kmi.open.ac.uk/projects/smartproducts/ontologies/user.owl#hasProfileStrength -->
+
+    <owl:DatatypeProperty rdf:about="&user;hasProfileStrength">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:domain rdf:resource="&user;UserProfile"/>
+        <rdfs:range rdf:resource="&xsd;float"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://kmi.open.ac.uk/projects/smartproducts/ontologies/user.owl#isHardConstraint -->
+
+    <owl:DatatypeProperty rdf:about="&user;isHardConstraint">
+        <rdfs:domain rdf:resource="&user;Preference"/>
+        <rdfs:range rdf:resource="&xsd;boolean"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://kmi.open.ac.uk/projects/smartproducts/ontologies/generic.owl#PhysicalEntityInSpace -->
+
+    <owl:Class rdf:about="&generic;PhysicalEntityInSpace"/>
+    
+
+
+    <!-- http://kmi.open.ac.uk/projects/smartproducts/ontologies/generic.owl#RoleType -->
+
+    <owl:Class rdf:about="&generic;RoleType"/>
+    
+
+
+    <!-- http://kmi.open.ac.uk/projects/smartproducts/ontologies/user.owl#ConditionalProfile -->
+
+    <owl:Class rdf:about="&user;ConditionalProfile">
+        <rdfs:subClassOf rdf:resource="&user;UserProfile"/>
+    </owl:Class>
+    
+
+
+    <!-- http://kmi.open.ac.uk/projects/smartproducts/ontologies/user.owl#DetailLevel -->
+
+    <owl:Class rdf:about="&user;DetailLevel">
+        <rdfs:subClassOf rdf:resource="&user;InteractionMode"/>
+    </owl:Class>
+    
+
+
+    <!-- http://kmi.open.ac.uk/projects/smartproducts/ontologies/user.owl#InteractionMediaType -->
+
+    <owl:Class rdf:about="&user;InteractionMediaType">
+        <rdfs:subClassOf rdf:resource="&user;InteractionMode"/>
+    </owl:Class>
+    
+
+
+    <!-- http://kmi.open.ac.uk/projects/smartproducts/ontologies/user.owl#InteractionMessage -->
+
+    <owl:Class rdf:about="&user;InteractionMessage">
+        <rdfs:subClassOf rdf:resource="&dul;InformationObject"/>
+    </owl:Class>
+    
+
+
+    <!-- http://kmi.open.ac.uk/projects/smartproducts/ontologies/user.owl#InteractionMode -->
+
+    <owl:Class rdf:about="&user;InteractionMode">
+        <rdfs:subClassOf rdf:resource="&dul;SocialObjectAttribute"/>
+    </owl:Class>
+    
+
+
+    <!-- http://kmi.open.ac.uk/projects/smartproducts/ontologies/user.owl#InteractionModePreference -->
+
+    <owl:Class rdf:about="&user;InteractionModePreference">
+        <rdfs:subClassOf rdf:resource="&user;Preference"/>
+    </owl:Class>
+    
+
+
+    <!-- http://kmi.open.ac.uk/projects/smartproducts/ontologies/user.owl#InteractionOption -->
+
+    <owl:Class rdf:about="&user;InteractionOption">
+        <rdfs:subClassOf rdf:resource="&dul;Concept"/>
+    </owl:Class>
+    
+
+
+    <!-- http://kmi.open.ac.uk/projects/smartproducts/ontologies/user.owl#LanguageInteractionMode -->
+
+    <owl:Class rdf:about="&user;LanguageInteractionMode">
+        <rdfs:subClassOf rdf:resource="&user;InteractionMode"/>
+    </owl:Class>
+    
+
+
+    <!-- http://kmi.open.ac.uk/projects/smartproducts/ontologies/user.owl#Preference -->
+
+    <owl:Class rdf:about="&user;Preference">
+        <rdfs:subClassOf rdf:resource="&user;ConditionalProfile"/>
+    </owl:Class>
+    
+
+
+    <!-- http://kmi.open.ac.uk/projects/smartproducts/ontologies/user.owl#PreferenceCriterion -->
+
+    <owl:Class rdf:about="&user;PreferenceCriterion">
+        <rdfs:subClassOf rdf:resource="&dul;SocialObjectAttribute"/>
+    </owl:Class>
+    
+
+
+    <!-- http://kmi.open.ac.uk/projects/smartproducts/ontologies/user.owl#SkillLevel -->
+
+    <owl:Class rdf:about="&user;SkillLevel">
+        <rdfs:subClassOf rdf:resource="&user;UserProfile"/>
+    </owl:Class>
+    
+
+
+    <!-- http://kmi.open.ac.uk/projects/smartproducts/ontologies/user.owl#User -->
+
+    <owl:Class rdf:about="&user;User">
+        <rdfs:subClassOf rdf:resource="&dul;Person"/>
+    </owl:Class>
+    
+
+
+    <!-- http://kmi.open.ac.uk/projects/smartproducts/ontologies/user.owl#UserAwareAgent -->
+
+    <owl:Class rdf:about="&user;UserAwareAgent">
+        <rdfs:subClassOf rdf:resource="&dul;Agent"/>
+    </owl:Class>
+    
+
+
+    <!-- http://kmi.open.ac.uk/projects/smartproducts/ontologies/user.owl#UserProfile -->
+
+    <owl:Class rdf:about="&user;UserProfile">
+        <rdfs:subClassOf rdf:resource="&dul;Quality"/>
+    </owl:Class>
+    
+
+
+    <!-- http://kmi.open.ac.uk/projects/smartproducts/ontologies/user.owl#UserRole -->
+
+    <owl:Class rdf:about="&user;UserRole">
+        <rdfs:subClassOf rdf:resource="&dul;Role"/>
+    </owl:Class>
+    
+
+
+    <!-- http://kmi.open.ac.uk/projects/smartproducts/ontologies/user.owl#UserRoleType -->
+
+    <owl:Class rdf:about="&user;UserRoleType">
+        <rdfs:subClassOf rdf:resource="&generic;RoleType"/>
+    </owl:Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://kmi.open.ac.uk/projects/smartproducts/ontologies/user.owl#AbsoluteExplicit -->
+
+    <owl:NamedIndividual rdf:about="&user;AbsoluteExplicit">
+        <rdf:type rdf:resource="&user;PreferenceCriterion"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://kmi.open.ac.uk/projects/smartproducts/ontologies/user.owl#AbsoluteMax -->
+
+    <owl:NamedIndividual rdf:about="&user;AbsoluteMax">
+        <rdf:type rdf:resource="&user;PreferenceCriterion"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://kmi.open.ac.uk/projects/smartproducts/ontologies/user.owl#AbsoluteMin -->
+
+    <owl:NamedIndividual rdf:about="&user;AbsoluteMin">
+        <rdf:type rdf:resource="&user;PreferenceCriterion"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://kmi.open.ac.uk/projects/smartproducts/ontologies/user.owl#Audio -->
+
+    <owl:NamedIndividual rdf:about="&user;Audio">
+        <rdf:type rdf:resource="&user;InteractionMediaType"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://kmi.open.ac.uk/projects/smartproducts/ontologies/user.owl#Detailed -->
+
+    <owl:NamedIndividual rdf:about="&user;Detailed">
+        <rdf:type rdf:resource="&user;DetailLevel"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://kmi.open.ac.uk/projects/smartproducts/ontologies/user.owl#English -->
+
+    <owl:NamedIndividual rdf:about="&user;English">
+        <rdf:type rdf:resource="&user;LanguageInteractionMode"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://kmi.open.ac.uk/projects/smartproducts/ontologies/user.owl#Finnish -->
+
+    <owl:NamedIndividual rdf:about="&user;Finnish">
+        <rdf:type rdf:resource="&user;LanguageInteractionMode"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://kmi.open.ac.uk/projects/smartproducts/ontologies/user.owl#GUI -->
+
+    <owl:NamedIndividual rdf:about="&user;GUI">
+        <rdf:type rdf:resource="&user;InteractionMediaType"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://kmi.open.ac.uk/projects/smartproducts/ontologies/user.owl#Image -->
+
+    <owl:NamedIndividual rdf:about="&user;Image">
+        <rdf:type rdf:resource="&user;InteractionMediaType"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://kmi.open.ac.uk/projects/smartproducts/ontologies/user.owl#LowDetailed -->
+
+    <owl:NamedIndividual rdf:about="&user;LowDetailed">
+        <rdf:type rdf:resource="&user;DetailLevel"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://kmi.open.ac.uk/projects/smartproducts/ontologies/user.owl#NoLang -->
+
+    <owl:NamedIndividual rdf:about="&user;NoLang">
+        <rdf:type rdf:resource="&user;LanguageInteractionMode"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://kmi.open.ac.uk/projects/smartproducts/ontologies/user.owl#OrderExplicit -->
+
+    <owl:NamedIndividual rdf:about="&user;OrderExplicit">
+        <rdf:type rdf:resource="&user;PreferenceCriterion"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://kmi.open.ac.uk/projects/smartproducts/ontologies/user.owl#OrderMax -->
+
+    <owl:NamedIndividual rdf:about="&user;OrderMax">
+        <rdf:type rdf:resource="&user;PreferenceCriterion"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://kmi.open.ac.uk/projects/smartproducts/ontologies/user.owl#OrderMin -->
+
+    <owl:NamedIndividual rdf:about="&user;OrderMin">
+        <rdf:type rdf:resource="&user;PreferenceCriterion"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://kmi.open.ac.uk/projects/smartproducts/ontologies/user.owl#Russian -->
+
+    <owl:NamedIndividual rdf:about="&user;Russian">
+        <rdf:type rdf:resource="&user;LanguageInteractionMode"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://kmi.open.ac.uk/projects/smartproducts/ontologies/user.owl#Text -->
+
+    <owl:NamedIndividual rdf:about="&user;Text">
+        <rdf:type rdf:resource="&user;InteractionMediaType"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://kmi.open.ac.uk/projects/smartproducts/ontologies/user.owl#Video -->
+
+    <owl:NamedIndividual rdf:about="&user;Video">
+        <rdf:type rdf:resource="&user;InteractionMediaType"/>
+    </owl:NamedIndividual>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 3.2.0.1502) http://owlapi.sourceforge.net -->
+

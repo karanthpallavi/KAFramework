@@ -1,0 +1,2043 @@
+<?xml version="1.0"?>
+<Ontology xmlns="http://www.w3.org/2002/07/owl#"
+     xml:base="http://kmi.open.ac.uk/projects/smartproducts/ontologies/food.owl"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     ontologyIRI="http://kmi.open.ac.uk/projects/smartproducts/ontologies/food.owl">
+    <Prefix name="" IRI="http://kmi.open.ac.uk/projects/smartproducts/ontologies/food.owl#"/>
+    <Prefix name="dc" IRI="http://purl.org/dc/elements/1.1/"/>
+    <Prefix name="ns" IRI="http://creativecommons.org/ns#"/>
+    <Prefix name="dul" IRI="http://www.loa-cnr.it/ontologies/DUL.owl#"/>
+    <Prefix name="owl" IRI="http://www.w3.org/2002/07/owl#"/>
+    <Prefix name="rdf" IRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/>
+    <Prefix name="ssn" IRI="http://purl.oclc.org/NET/ssnx/ssn#"/>
+    <Prefix name="xml" IRI="http://www.w3.org/XML/1998/namespace"/>
+    <Prefix name="xsd" IRI="http://www.w3.org/2001/XMLSchema#"/>
+    <Prefix name="xsp" IRI="http://www.owl-ontologies.com/2005/08/07/xsp.owl#"/>
+    <Prefix name="rdfs" IRI="http://www.w3.org/2000/01/rdf-schema#"/>
+    <Prefix name="user" IRI="http://kmi.open.ac.uk/projects/smartproducts/ontologies/user.owl#"/>
+    <Prefix name="terms" IRI="http://purl.org/dc/terms/"/>
+    <Prefix name="cicero" IRI="http://isweb.uni-koblenz.de/cicero#"/>
+    <Prefix name="sptime" IRI="http://kmi.open.ac.uk/projects/smartproducts/ontologies/time.owl#"/>
+    <Prefix name="context" IRI="http://kmi.open.ac.uk/projects/smartproducts/ontologies/context.owl#"/>
+    <Prefix name="generic" IRI="http://kmi.open.ac.uk/projects/smartproducts/ontologies/generic.owl#"/>
+    <Prefix name="owl2xml" IRI="http://www.w3.org/2006/12/owl2-xml#"/>
+    <Prefix name="process" IRI="http://kmi.open.ac.uk/projects/smartproducts/ontologies/process.owl#"/>
+    <Prefix name="product" IRI="http://kmi.open.ac.uk/projects/smartproducts/ontologies/product.owl#"/>
+    <Prefix name="protege" IRI="http://protege.stanford.edu/plugins/owl/protege#"/>
+    <Prefix name="w3ctime" IRI="http://www.w3.org/2006/time#"/>
+    <Import>http://kmi.open.ac.uk/projects/smartproducts/ontologies/product.owl</Import>
+    <Import>http://kmi.open.ac.uk/projects/smartproducts/ontologies/process.owl</Import>
+    <Import>http://protege.stanford.edu/ontologies/pizza/pizza.owl</Import>
+    <Annotation>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Defines concepts and properties specific for the Philips use case (cooking domain).</Literal>
+    </Annotation>
+    <Annotation>
+        <AnnotationProperty abbreviatedIRI="dc:description"/>
+        <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Defines concepts and properties specific for the Philips use case (cooking domain).</Literal>
+    </Annotation>
+    <Annotation>
+        <AnnotationProperty abbreviatedIRI="dc:title"/>
+        <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">SmartProducts Food Domain Model</Literal>
+    </Annotation>
+    <Declaration>
+        <Class abbreviatedIRI="generic:PhysicalEntityInSpace"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#AmericanCuisineRecipe"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#IndianCuisineRecipe"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual abbreviatedIRI="generic:MediterraneanBasin"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty abbreviatedIRI="generic:madeOf"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasDietType"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual abbreviatedIRI="generic:Mexico"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Stilton"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#DairyProduct"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#CaribbeanCuisineRecipe"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual abbreviatedIRI="generic:China"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Drinks"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#DairyFreeDiet"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Recipe"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#FoodOrDrink"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty abbreviatedIRI="process:hasStep"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasNutrient"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#TimeOfDayMealType"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#MassQuantityInOunces"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#MiddleEasternCuisineRecipe"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasHealthProfile"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty abbreviatedIRI="generic:contains"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#MaxCookingTimePreference"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#impliesPreference"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#FryingPan"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="dul:Substance"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#IngredientPortion"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Oven"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#largestProducer"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#FoodOrDrinkItem"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual abbreviatedIRI="generic:Spain"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#BakingOven"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Disease"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#MealContext"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasCookingTaskType"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual abbreviatedIRI="generic:Greece"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#FoodPreference"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#producesFoodItem"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#CitrusFruit"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#SideCourse"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ScottishCuisineRecipe"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Melons"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#courseType"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#RecipeCookingTimePreference"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual abbreviatedIRI="generic:USA"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#VolumeQuantityInCups"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Proteins"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#MealMinNutritionEnergyPreference"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Baking"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Dessert"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#VietnameseCuisineRecipe"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#RecipeTypePreference"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual abbreviatedIRI="generic:Vietnam"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="dul:PhysicalBody"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="generic:Assembly"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#BritishCuisineRecipe"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Grapefruit"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#MealNutritionPreference"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty abbreviatedIRI="rdfs:subClassOf"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Nuts"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="product:Product"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#SpanishCuisineRecipe"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Cutting"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#GlutenFreeDiet"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual abbreviatedIRI="generic:Italy"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#NutrientPortion"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual abbreviatedIRI="generic:India"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#RecipePreference"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#TESCO"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#VegetableOil"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual abbreviatedIRI="generic:calorie"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#MainCourseRole"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#IrishCuisineRecipe"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#DietAssessment"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#DrinkItem"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#NutritionPreference"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasDifficultyCategory"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="process:ActivityDefinition"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Moderate"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#EggFreeDiet"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#courseValue"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#cup"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="user:Preference"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ConcreteDrinkItem"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Scurvy"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#MealCourseType"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#MaxCaloriesPreference"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#MealPreference"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#CookingActivity"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#NutritionalEnergy"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Frying"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#CookingDifficultyCategory"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasGeographicalProvenance"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#suitableForMealCourse"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual abbreviatedIRI="generic:Ireland"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Gorgonzola"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="generic:VolumeQuantity"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasExpiryDate"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Food"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Soup"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual abbreviatedIRI="generic:Japan"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Cholesterol"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#EnergyQuantityInCalories"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#MeatProduct"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="w3ctime:DayOfWeek"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Cheese"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Drink"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty abbreviatedIRI="generic:hasPhysicalQuantityUnit"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#MealNutritionEnergyPreference"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#TreeFruit"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasMealCourse"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty abbreviatedIRI="user:hasProfile"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#DessertCourseRole"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Fruits"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="product:ProductizedDevice"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#TropicalFruit"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#GreekCuisineRecipe"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#LowInSaltDiet"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Leafy"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Food"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#CookingGuide"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#AtomicFoodOrDrinkItem"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Appetizer"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#FoodProduct"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasGuest"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#JapaneseCuisineRecipe"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Store"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#VeganDiet"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#MexicanCuisineRecipe"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#MealCourseRole"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual abbreviatedIRI="generic:Morocco"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ConcreteFoodOrDrinkItem"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#DefaultIngredientPortion"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#MealType"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#VolumeQuantityInTableSpoons"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="user:User"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Vegetables"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#numberOfGuests"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#canBeReplacedWith"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Expert"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="generic:MassQuantity"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="generic:Thermometer"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#DishPreference"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="process:WorkflowDefinition"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ItalianCuisineRecipe"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="generic:Matter"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#MediterraneanCuisineRecipe"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#MoroccanCuisineRecipe"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Carbohydrate"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty abbreviatedIRI="dul:includesAgent"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#MealStructure"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Lemon"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual abbreviatedIRI="generic:Scotland"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Ram"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasIngredient"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="w3ctime:DurationDescription"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#MealPlanningTask"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Easy"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ChineseCuisineRecipe"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#MassQuantityInPounds"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Grill"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#PhilipsCookingGuide"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty abbreviatedIRI="user:preferenceValue"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual abbreviatedIRI="generic:UK"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#FoodOrDrink"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#FoodOrDrinkMatter"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual abbreviatedIRI="generic:France"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasMealStructure"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#DiabeticDiet"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#FrenchCuisineRecipe"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="owl:Thing"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#producedByRecipe"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Nutrient"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Boiling"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#MainCourse"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#suitableForDiet"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Sauce"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Rooted"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual abbreviatedIRI="generic:Caribbean"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#DietType"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#FoodItem"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#FishProduct"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#MealMaxNutritionEnergyPreference"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#likes"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual abbreviatedIRI="generic:MiddleEast"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#FoodMatter"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="user:UserProfile"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual abbreviatedIRI="generic:Thailand"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="generic:AssemblyComponent"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Orange"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="generic:PhysicalGeographicEntity"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#KitchenTool"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#RegionalCuisineRecipe"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Berries"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#IngredientPreference"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#VegetarianDiet"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Turkey"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Ingredient"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#VirtualFoodOrDrinkItem"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#CookingTaskType"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ConcreteFoodItem"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Mexico"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="generic:EnergyQuantity"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#hasScore"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="generic:VolumeMeasurementUnit"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ThaiCuisineRecipe"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#PhilipsCookingGuideXYZ"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Party"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#treat"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Supermarket"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#LowFatDiet"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#NutFreeDiet"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Sodium"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Fat"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#GermanCuisineRecipe"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#HealthProfile"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="generic:PhysicalQuantity"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#CompositeFoodOrDrinkItem"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasAvailableIngredient"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty abbreviatedIRI="generic:hasSubComponent"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Fridge"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasDefaultPortion"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="generic:Temperature"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Steamer"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual abbreviatedIRI="generic:Germany"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="generic:Task"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="dul:Place"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="dul:SocialObjectAttribute"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="generic:MetaClass"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="dul:Person"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty abbreviatedIRI="dc:title"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="dul:Quality"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty abbreviatedIRI="dul:hasPart"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="generic:RoleType"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty abbreviatedIRI="dul:satisfies"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty abbreviatedIRI="dc:description"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="dul:Role"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty abbreviatedIRI="dul:definesRole"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty abbreviatedIRI="dul:hasRegion"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty abbreviatedIRI="dul:hasQuality"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="dul:Concept"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="generic:SituationalContext"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="generic:Building"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="dul:Description"/>
+    </Declaration>
+    <EquivalentClasses>
+        <Class IRI="#FoodMatter"/>
+        <ObjectHasValue>
+            <ObjectProperty abbreviatedIRI="rdfs:subClassOf"/>
+            <NamedIndividual IRI="#Food"/>
+        </ObjectHasValue>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#FoodOrDrinkMatter"/>
+        <ObjectHasValue>
+            <ObjectProperty abbreviatedIRI="rdfs:subClassOf"/>
+            <NamedIndividual IRI="#FoodOrDrink"/>
+        </ObjectHasValue>
+    </EquivalentClasses>
+    <SubClassOf>
+        <Class IRI="#AmericanCuisineRecipe"/>
+        <Class IRI="#RegionalCuisineRecipe"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#AmericanCuisineRecipe"/>
+        <ObjectHasValue>
+            <ObjectProperty IRI="#hasGeographicalProvenance"/>
+            <NamedIndividual abbreviatedIRI="generic:USA"/>
+        </ObjectHasValue>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#AtomicFoodOrDrinkItem"/>
+        <Class IRI="#FoodOrDrinkItem"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#AtomicFoodOrDrinkItem"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty abbreviatedIRI="generic:madeOf"/>
+            <Class IRI="#FoodOrDrinkMatter"/>
+        </ObjectAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#AtomicFoodOrDrinkItem"/>
+        <ObjectExactCardinality cardinality="1">
+            <ObjectProperty abbreviatedIRI="generic:madeOf"/>
+            <Class IRI="#FoodOrDrinkMatter"/>
+        </ObjectExactCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#BakingOven"/>
+        <Class IRI="#Oven"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Berries"/>
+        <Class IRI="#Fruits"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#BritishCuisineRecipe"/>
+        <Class IRI="#RegionalCuisineRecipe"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#BritishCuisineRecipe"/>
+        <ObjectHasValue>
+            <ObjectProperty IRI="#hasGeographicalProvenance"/>
+            <NamedIndividual abbreviatedIRI="generic:UK"/>
+        </ObjectHasValue>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#CaribbeanCuisineRecipe"/>
+        <Class IRI="#RegionalCuisineRecipe"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#CaribbeanCuisineRecipe"/>
+        <ObjectHasValue>
+            <ObjectProperty IRI="#hasGeographicalProvenance"/>
+            <NamedIndividual abbreviatedIRI="generic:Caribbean"/>
+        </ObjectHasValue>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ChineseCuisineRecipe"/>
+        <Class IRI="#RegionalCuisineRecipe"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ChineseCuisineRecipe"/>
+        <ObjectHasValue>
+            <ObjectProperty IRI="#hasGeographicalProvenance"/>
+            <NamedIndividual abbreviatedIRI="generic:China"/>
+        </ObjectHasValue>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#CitrusFruit"/>
+        <Class IRI="#Fruits"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#CompositeFoodOrDrinkItem"/>
+        <Class IRI="#FoodOrDrinkItem"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#CompositeFoodOrDrinkItem"/>
+        <Class abbreviatedIRI="generic:Assembly"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ConcreteDrinkItem"/>
+        <Class IRI="#ConcreteFoodOrDrinkItem"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ConcreteDrinkItem"/>
+        <Class IRI="#DrinkItem"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ConcreteFoodItem"/>
+        <Class IRI="#ConcreteFoodOrDrinkItem"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ConcreteFoodItem"/>
+        <Class IRI="#FoodItem"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ConcreteFoodOrDrinkItem"/>
+        <Class IRI="#FoodOrDrinkItem"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#CookingActivity"/>
+        <Class abbreviatedIRI="process:ActivityDefinition"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#CookingDifficultyCategory"/>
+        <Class abbreviatedIRI="dul:SocialObjectAttribute"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#CookingGuide"/>
+        <Class IRI="#KitchenTool"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#CookingTaskType"/>
+        <Class abbreviatedIRI="dul:SocialObjectAttribute"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#DefaultIngredientPortion"/>
+        <Class IRI="#IngredientPortion"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#DessertCourseRole"/>
+        <Class IRI="#MealCourseRole"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#DietAssessment"/>
+        <Class abbreviatedIRI="dul:Quality"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#DietType"/>
+        <Class abbreviatedIRI="dul:Concept"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Disease"/>
+        <Class IRI="#HealthProfile"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#DishPreference"/>
+        <Class IRI="#RecipePreference"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#DishPreference"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty abbreviatedIRI="user:preferenceValue"/>
+            <Class IRI="#FoodOrDrinkMatter"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Drink"/>
+        <Class IRI="#FoodOrDrink"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#DrinkItem"/>
+        <Class IRI="#FoodOrDrinkItem"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#EnergyQuantityInCalories"/>
+        <Class abbreviatedIRI="generic:EnergyQuantity"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#EnergyQuantityInCalories"/>
+        <ObjectHasValue>
+            <ObjectProperty abbreviatedIRI="generic:hasPhysicalQuantityUnit"/>
+            <NamedIndividual abbreviatedIRI="generic:calorie"/>
+        </ObjectHasValue>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Food"/>
+        <Class IRI="#FoodOrDrink"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#FoodItem"/>
+        <Class IRI="#FoodOrDrinkItem"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#FoodMatter"/>
+        <Class IRI="#FoodOrDrinkMatter"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#FoodOrDrink"/>
+        <Class IRI="#FoodOrDrinkItem"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#FoodOrDrinkItem"/>
+        <Class abbreviatedIRI="generic:PhysicalEntityInSpace"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#FoodOrDrinkItem"/>
+        <Class abbreviatedIRI="dul:PhysicalBody"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#FoodOrDrinkMatter"/>
+        <Class abbreviatedIRI="generic:Matter"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#FoodOrDrinkMatter"/>
+        <Class abbreviatedIRI="generic:MetaClass"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#FoodPreference"/>
+        <Class abbreviatedIRI="user:Preference"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#FoodProduct"/>
+        <Class IRI="#FoodItem"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#FoodProduct"/>
+        <Class abbreviatedIRI="product:Product"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#FrenchCuisineRecipe"/>
+        <Class IRI="#RegionalCuisineRecipe"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#FrenchCuisineRecipe"/>
+        <ObjectHasValue>
+            <ObjectProperty IRI="#hasGeographicalProvenance"/>
+            <NamedIndividual abbreviatedIRI="generic:France"/>
+        </ObjectHasValue>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Fridge"/>
+        <Class IRI="#KitchenTool"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Fridge"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty abbreviatedIRI="generic:hasSubComponent"/>
+            <Class abbreviatedIRI="generic:Thermometer"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Fridge"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty abbreviatedIRI="generic:contains"/>
+            <Class IRI="#ConcreteFoodOrDrinkItem"/>
+        </ObjectAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Fruits"/>
+        <Class IRI="#ConcreteFoodItem"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#FryingPan"/>
+        <Class IRI="#KitchenTool"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#GermanCuisineRecipe"/>
+        <Class IRI="#RegionalCuisineRecipe"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#GermanCuisineRecipe"/>
+        <ObjectHasValue>
+            <ObjectProperty IRI="#hasGeographicalProvenance"/>
+            <NamedIndividual abbreviatedIRI="generic:Germany"/>
+        </ObjectHasValue>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#GreekCuisineRecipe"/>
+        <Class IRI="#MediterraneanCuisineRecipe"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#GreekCuisineRecipe"/>
+        <ObjectHasValue>
+            <ObjectProperty IRI="#hasGeographicalProvenance"/>
+            <NamedIndividual abbreviatedIRI="generic:Greece"/>
+        </ObjectHasValue>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Grill"/>
+        <Class IRI="#KitchenTool"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#HealthProfile"/>
+        <Class abbreviatedIRI="user:UserProfile"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#IndianCuisineRecipe"/>
+        <Class IRI="#RegionalCuisineRecipe"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#IndianCuisineRecipe"/>
+        <ObjectHasValue>
+            <ObjectProperty IRI="#hasGeographicalProvenance"/>
+            <NamedIndividual abbreviatedIRI="generic:India"/>
+        </ObjectHasValue>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#IngredientPortion"/>
+        <Class IRI="#AtomicFoodOrDrinkItem"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#IngredientPortion"/>
+        <Class IRI="#VirtualFoodOrDrinkItem"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#IngredientPortion"/>
+        <Class abbreviatedIRI="generic:AssemblyComponent"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#IngredientPortion"/>
+        <Class abbreviatedIRI="dul:Substance"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#IngredientPreference"/>
+        <Class IRI="#RecipePreference"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#IngredientPreference"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty abbreviatedIRI="user:preferenceValue"/>
+            <Class IRI="#FoodOrDrinkMatter"/>
+        </ObjectAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#IrishCuisineRecipe"/>
+        <Class IRI="#RegionalCuisineRecipe"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#IrishCuisineRecipe"/>
+        <ObjectHasValue>
+            <ObjectProperty IRI="#hasGeographicalProvenance"/>
+            <NamedIndividual abbreviatedIRI="generic:Ireland"/>
+        </ObjectHasValue>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ItalianCuisineRecipe"/>
+        <Class IRI="#MediterraneanCuisineRecipe"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ItalianCuisineRecipe"/>
+        <ObjectHasValue>
+            <ObjectProperty IRI="#hasGeographicalProvenance"/>
+            <NamedIndividual abbreviatedIRI="generic:Italy"/>
+        </ObjectHasValue>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#JapaneseCuisineRecipe"/>
+        <Class IRI="#RegionalCuisineRecipe"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#JapaneseCuisineRecipe"/>
+        <ObjectHasValue>
+            <ObjectProperty IRI="#hasGeographicalProvenance"/>
+            <NamedIndividual abbreviatedIRI="generic:Japan"/>
+        </ObjectHasValue>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#KitchenTool"/>
+        <Class abbreviatedIRI="product:ProductizedDevice"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Leafy"/>
+        <Class IRI="#Vegetables"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#MainCourseRole"/>
+        <Class IRI="#MealCourseRole"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#MassQuantityInOunces"/>
+        <Class abbreviatedIRI="generic:MassQuantity"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#MassQuantityInPounds"/>
+        <Class abbreviatedIRI="generic:MassQuantity"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#MaxCaloriesPreference"/>
+        <Class IRI="#NutritionPreference"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#MaxCookingTimePreference"/>
+        <Class IRI="#RecipeCookingTimePreference"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#MaxCookingTimePreference"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty abbreviatedIRI="user:preferenceValue"/>
+            <Class abbreviatedIRI="w3ctime:DurationDescription"/>
+        </ObjectAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#MealContext"/>
+        <Class abbreviatedIRI="generic:SituationalContext"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#MealCourseRole"/>
+        <Class abbreviatedIRI="dul:Role"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#MealCourseType"/>
+        <Class abbreviatedIRI="generic:RoleType"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#MealMaxNutritionEnergyPreference"/>
+        <Class IRI="#MealNutritionEnergyPreference"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#MealMinNutritionEnergyPreference"/>
+        <Class IRI="#MealNutritionEnergyPreference"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#MealNutritionEnergyPreference"/>
+        <Class IRI="#MealNutritionPreference"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#MealNutritionEnergyPreference"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty abbreviatedIRI="user:preferenceValue"/>
+            <Class abbreviatedIRI="generic:EnergyQuantity"/>
+        </ObjectAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#MealNutritionPreference"/>
+        <Class IRI="#MealPreference"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#MealPlanningTask"/>
+        <Class abbreviatedIRI="generic:Task"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#MealPreference"/>
+        <Class IRI="#FoodPreference"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#MealStructure"/>
+        <Class abbreviatedIRI="dul:Description"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#MealType"/>
+        <Class abbreviatedIRI="dul:SocialObjectAttribute"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#MediterraneanCuisineRecipe"/>
+        <Class IRI="#RegionalCuisineRecipe"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#MediterraneanCuisineRecipe"/>
+        <ObjectHasValue>
+            <ObjectProperty IRI="#hasGeographicalProvenance"/>
+            <NamedIndividual abbreviatedIRI="generic:MediterraneanBasin"/>
+        </ObjectHasValue>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Melons"/>
+        <Class IRI="#Fruits"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#MexicanCuisineRecipe"/>
+        <Class IRI="#RegionalCuisineRecipe"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#MexicanCuisineRecipe"/>
+        <ObjectHasValue>
+            <ObjectProperty IRI="#hasGeographicalProvenance"/>
+            <NamedIndividual abbreviatedIRI="generic:Mexico"/>
+        </ObjectHasValue>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#MiddleEasternCuisineRecipe"/>
+        <Class IRI="#RegionalCuisineRecipe"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#MiddleEasternCuisineRecipe"/>
+        <ObjectHasValue>
+            <ObjectProperty IRI="#hasGeographicalProvenance"/>
+            <NamedIndividual abbreviatedIRI="generic:MiddleEast"/>
+        </ObjectHasValue>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#MoroccanCuisineRecipe"/>
+        <Class IRI="#MediterraneanCuisineRecipe"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#MoroccanCuisineRecipe"/>
+        <ObjectHasValue>
+            <ObjectProperty IRI="#hasGeographicalProvenance"/>
+            <NamedIndividual abbreviatedIRI="generic:Morocco"/>
+        </ObjectHasValue>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Nutrient"/>
+        <Class abbreviatedIRI="generic:Matter"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#NutrientPortion"/>
+        <Class abbreviatedIRI="dul:Substance"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#NutrientPortion"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty abbreviatedIRI="generic:madeOf"/>
+            <Class IRI="#Nutrient"/>
+        </ObjectAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#NutritionPreference"/>
+        <Class IRI="#RecipePreference"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Nuts"/>
+        <Class IRI="#ConcreteFoodItem"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Oven"/>
+        <Class IRI="#KitchenTool"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Party"/>
+        <Class IRI="#MealContext"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#PhilipsCookingGuide"/>
+        <Class IRI="#CookingGuide"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#PhilipsCookingGuideXYZ"/>
+        <Class IRI="#PhilipsCookingGuide"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Recipe"/>
+        <Class abbreviatedIRI="process:WorkflowDefinition"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Recipe"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty IRI="#hasIngredient"/>
+            <Class IRI="#IngredientPortion"/>
+        </ObjectAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Recipe"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty abbreviatedIRI="process:hasStep"/>
+            <Class IRI="#CookingActivity"/>
+        </ObjectAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Recipe"/>
+        <ObjectMinCardinality cardinality="1">
+            <ObjectProperty IRI="#hasIngredient"/>
+            <Class IRI="#IngredientPortion"/>
+        </ObjectMinCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#RecipeCookingTimePreference"/>
+        <Class IRI="#RecipePreference"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#RecipePreference"/>
+        <Class IRI="#FoodPreference"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#RecipeTypePreference"/>
+        <Class IRI="#RecipePreference"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#RegionalCuisineRecipe"/>
+        <Class IRI="#Recipe"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Rooted"/>
+        <Class IRI="#Vegetables"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ScottishCuisineRecipe"/>
+        <Class IRI="#BritishCuisineRecipe"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ScottishCuisineRecipe"/>
+        <ObjectHasValue>
+            <ObjectProperty IRI="#hasGeographicalProvenance"/>
+            <NamedIndividual abbreviatedIRI="generic:Scotland"/>
+        </ObjectHasValue>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#SpanishCuisineRecipe"/>
+        <Class IRI="#MediterraneanCuisineRecipe"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#SpanishCuisineRecipe"/>
+        <ObjectHasValue>
+            <ObjectProperty IRI="#hasGeographicalProvenance"/>
+            <NamedIndividual abbreviatedIRI="generic:Spain"/>
+        </ObjectHasValue>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Steamer"/>
+        <Class IRI="#KitchenTool"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Store"/>
+        <Class abbreviatedIRI="generic:Building"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Supermarket"/>
+        <Class IRI="#Store"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ThaiCuisineRecipe"/>
+        <Class IRI="#RegionalCuisineRecipe"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ThaiCuisineRecipe"/>
+        <ObjectHasValue>
+            <ObjectProperty IRI="#hasGeographicalProvenance"/>
+            <NamedIndividual abbreviatedIRI="generic:Thailand"/>
+        </ObjectHasValue>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#TimeOfDayMealType"/>
+        <Class IRI="#MealType"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#TreeFruit"/>
+        <Class IRI="#Fruits"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#TropicalFruit"/>
+        <Class IRI="#Fruits"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Vegetables"/>
+        <Class IRI="#ConcreteFoodItem"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#VietnameseCuisineRecipe"/>
+        <Class IRI="#RegionalCuisineRecipe"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#VietnameseCuisineRecipe"/>
+        <ObjectHasValue>
+            <ObjectProperty IRI="#hasGeographicalProvenance"/>
+            <NamedIndividual abbreviatedIRI="generic:Vietnam"/>
+        </ObjectHasValue>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#VirtualFoodOrDrinkItem"/>
+        <Class IRI="#FoodOrDrinkItem"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#VolumeQuantityInCups"/>
+        <Class abbreviatedIRI="generic:VolumeQuantity"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#VolumeQuantityInTableSpoons"/>
+        <Class abbreviatedIRI="generic:VolumeQuantity"/>
+    </SubClassOf>
+    <DisjointClasses>
+        <Class IRI="#ConcreteFoodOrDrinkItem"/>
+        <Class IRI="#IngredientPortion"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#ConcreteFoodOrDrinkItem"/>
+        <Class IRI="#VirtualFoodOrDrinkItem"/>
+    </DisjointClasses>
+    <ClassAssertion>
+        <Class IRI="#MealCourseType"/>
+        <NamedIndividual IRI="#Appetizer"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="owl:Thing"/>
+        <NamedIndividual IRI="#Appetizer"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#CookingTaskType"/>
+        <NamedIndividual IRI="#Baking"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="owl:Thing"/>
+        <NamedIndividual IRI="#Baking"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#CookingTaskType"/>
+        <NamedIndividual IRI="#Boiling"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="owl:Thing"/>
+        <NamedIndividual IRI="#Boiling"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Nutrient"/>
+        <NamedIndividual IRI="#Carbohydrate"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="owl:Thing"/>
+        <NamedIndividual IRI="#Carbohydrate"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Nutrient"/>
+        <NamedIndividual IRI="#Cholesterol"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="owl:Thing"/>
+        <NamedIndividual IRI="#Cholesterol"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#CookingTaskType"/>
+        <NamedIndividual IRI="#Cutting"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="owl:Thing"/>
+        <NamedIndividual IRI="#Cutting"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#DietType"/>
+        <NamedIndividual IRI="#DairyFreeDiet"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="owl:Thing"/>
+        <NamedIndividual IRI="#DairyFreeDiet"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#MealCourseType"/>
+        <NamedIndividual IRI="#Dessert"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#DietType"/>
+        <NamedIndividual IRI="#DiabeticDiet"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="owl:Thing"/>
+        <NamedIndividual IRI="#DiabeticDiet"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#MealCourseType"/>
+        <NamedIndividual IRI="#Drinks"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#CookingDifficultyCategory"/>
+        <NamedIndividual IRI="#Easy"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="owl:Thing"/>
+        <NamedIndividual IRI="#Easy"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#DietType"/>
+        <NamedIndividual IRI="#EggFreeDiet"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="owl:Thing"/>
+        <NamedIndividual IRI="#EggFreeDiet"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#CookingDifficultyCategory"/>
+        <NamedIndividual IRI="#Expert"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="owl:Thing"/>
+        <NamedIndividual IRI="#Expert"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Nutrient"/>
+        <NamedIndividual IRI="#Fat"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="owl:Thing"/>
+        <NamedIndividual IRI="#Fat"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#CookingTaskType"/>
+        <NamedIndividual IRI="#Frying"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="owl:Thing"/>
+        <NamedIndividual IRI="#Frying"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#DietType"/>
+        <NamedIndividual IRI="#GlutenFreeDiet"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="owl:Thing"/>
+        <NamedIndividual IRI="#GlutenFreeDiet"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#DietType"/>
+        <NamedIndividual IRI="#LowFatDiet"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="owl:Thing"/>
+        <NamedIndividual IRI="#LowFatDiet"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#DietType"/>
+        <NamedIndividual IRI="#LowInSaltDiet"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="owl:Thing"/>
+        <NamedIndividual IRI="#LowInSaltDiet"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#MealCourseType"/>
+        <NamedIndividual IRI="#MainCourse"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="owl:Thing"/>
+        <NamedIndividual IRI="#MainCourse"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#CookingDifficultyCategory"/>
+        <NamedIndividual IRI="#Moderate"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="owl:Thing"/>
+        <NamedIndividual IRI="#Moderate"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#DietType"/>
+        <NamedIndividual IRI="#NutFreeDiet"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="owl:Thing"/>
+        <NamedIndividual IRI="#NutFreeDiet"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Nutrient"/>
+        <NamedIndividual IRI="#NutritionalEnergy"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="owl:Thing"/>
+        <NamedIndividual IRI="#NutritionalEnergy"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Nutrient"/>
+        <NamedIndividual IRI="#Proteins"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="owl:Thing"/>
+        <NamedIndividual IRI="#Proteins"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#MealCourseType"/>
+        <NamedIndividual IRI="#SideCourse"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="owl:Thing"/>
+        <NamedIndividual IRI="#SideCourse"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Nutrient"/>
+        <NamedIndividual IRI="#Sodium"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="owl:Thing"/>
+        <NamedIndividual IRI="#Sodium"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#MealCourseType"/>
+        <NamedIndividual IRI="#Soup"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="owl:Thing"/>
+        <NamedIndividual IRI="#Soup"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Supermarket"/>
+        <NamedIndividual IRI="#TESCO"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#DietType"/>
+        <NamedIndividual IRI="#VeganDiet"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="owl:Thing"/>
+        <NamedIndividual IRI="#VeganDiet"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#DietType"/>
+        <NamedIndividual IRI="#VegetarianDiet"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="owl:Thing"/>
+        <NamedIndividual IRI="#VegetarianDiet"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="generic:VolumeMeasurementUnit"/>
+        <NamedIndividual IRI="#cup"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="owl:Thing"/>
+        <NamedIndividual abbreviatedIRI="generic:Caribbean"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="owl:Thing"/>
+        <NamedIndividual abbreviatedIRI="generic:China"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="owl:Thing"/>
+        <NamedIndividual abbreviatedIRI="generic:France"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="owl:Thing"/>
+        <NamedIndividual abbreviatedIRI="generic:Germany"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="owl:Thing"/>
+        <NamedIndividual abbreviatedIRI="generic:Greece"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="owl:Thing"/>
+        <NamedIndividual abbreviatedIRI="generic:India"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="owl:Thing"/>
+        <NamedIndividual abbreviatedIRI="generic:Ireland"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="owl:Thing"/>
+        <NamedIndividual abbreviatedIRI="generic:Italy"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="owl:Thing"/>
+        <NamedIndividual abbreviatedIRI="generic:Japan"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="owl:Thing"/>
+        <NamedIndividual abbreviatedIRI="generic:MediterraneanBasin"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="owl:Thing"/>
+        <NamedIndividual abbreviatedIRI="generic:Mexico"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="owl:Thing"/>
+        <NamedIndividual abbreviatedIRI="generic:MiddleEast"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="owl:Thing"/>
+        <NamedIndividual abbreviatedIRI="generic:Morocco"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="owl:Thing"/>
+        <NamedIndividual abbreviatedIRI="generic:Scotland"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="owl:Thing"/>
+        <NamedIndividual abbreviatedIRI="generic:Spain"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="owl:Thing"/>
+        <NamedIndividual abbreviatedIRI="generic:Thailand"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="owl:Thing"/>
+        <NamedIndividual abbreviatedIRI="generic:UK"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="owl:Thing"/>
+        <NamedIndividual abbreviatedIRI="generic:USA"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="owl:Thing"/>
+        <NamedIndividual abbreviatedIRI="generic:Vietnam"/>
+    </ClassAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#treat"/>
+        <NamedIndividual IRI="#Lemon"/>
+        <NamedIndividual IRI="#Scurvy"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#largestProducer"/>
+        <NamedIndividual IRI="#Mexico"/>
+        <NamedIndividual IRI="#Lemon"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#treat"/>
+        <NamedIndividual IRI="#Orange"/>
+        <NamedIndividual IRI="#Scurvy"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#likes"/>
+        <NamedIndividual IRI="#Ram"/>
+        <NamedIndividual IRI="#Lemon"/>
+    </ObjectPropertyAssertion>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasCookingTaskType"/>
+        <ObjectProperty abbreviatedIRI="dul:hasRegion"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasDietType"/>
+        <ObjectProperty abbreviatedIRI="dul:hasRegion"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasDifficultyCategory"/>
+        <ObjectProperty abbreviatedIRI="dul:hasRegion"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasGuest"/>
+        <ObjectProperty abbreviatedIRI="dul:includesAgent"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasHealthProfile"/>
+        <ObjectProperty abbreviatedIRI="user:hasProfile"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasIngredient"/>
+        <ObjectProperty abbreviatedIRI="generic:hasSubComponent"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasMealCourse"/>
+        <ObjectProperty abbreviatedIRI="dul:definesRole"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasMealStructure"/>
+        <ObjectProperty abbreviatedIRI="dul:satisfies"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasNutrient"/>
+        <ObjectProperty abbreviatedIRI="dul:hasPart"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#suitableForDiet"/>
+        <ObjectProperty abbreviatedIRI="dul:hasQuality"/>
+    </SubObjectPropertyOf>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="#producedByRecipe"/>
+        <ObjectProperty IRI="#producesFoodItem"/>
+    </InverseObjectProperties>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#canBeReplacedWith"/>
+        <Class IRI="#FoodMatter"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#courseType"/>
+        <Class IRI="#MealCourseRole"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#courseValue"/>
+        <Class IRI="#MealCourseRole"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasCookingTaskType"/>
+        <Class IRI="#CookingActivity"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasDefaultPortion"/>
+        <Class IRI="#FoodOrDrinkMatter"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasDietType"/>
+        <Class IRI="#DietAssessment"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasDifficultyCategory"/>
+        <Class IRI="#Recipe"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasExpiryDate"/>
+        <Class IRI="#ConcreteFoodOrDrinkItem"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasGeographicalProvenance"/>
+        <ObjectUnionOf>
+            <Class IRI="#FoodOrDrinkItem"/>
+            <Class IRI="#Recipe"/>
+        </ObjectUnionOf>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasGuest"/>
+        <Class IRI="#MealContext"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasIngredient"/>
+        <ObjectUnionOf>
+            <Class IRI="#FoodOrDrinkItem"/>
+            <Class IRI="#Recipe"/>
+        </ObjectUnionOf>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasMealCourse"/>
+        <Class IRI="#MealStructure"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasMealStructure"/>
+        <Class IRI="#MealContext"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasNutrient"/>
+        <Class IRI="#FoodOrDrinkItem"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#impliesPreference"/>
+        <Class IRI="#HealthProfile"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#largestProducer"/>
+        <Class IRI="#FoodOrDrinkItem"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#likes"/>
+        <Class abbreviatedIRI="dul:Person"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#producedByRecipe"/>
+        <Class IRI="#FoodOrDrinkItem"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#producesFoodItem"/>
+        <Class IRI="#Recipe"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#suitableForDiet"/>
+        <Class IRI="#FoodOrDrinkItem"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#suitableForMealCourse"/>
+        <Class IRI="#FoodOrDrinkItem"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#treat"/>
+        <Class IRI="#FoodOrDrinkItem"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#canBeReplacedWith"/>
+        <Class IRI="#FoodMatter"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#courseType"/>
+        <Class IRI="#MealCourseType"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#courseValue"/>
+        <Class IRI="#FoodOrDrinkItem"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasAvailableIngredient"/>
+        <Class IRI="#IngredientPortion"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasCookingTaskType"/>
+        <Class IRI="#CookingTaskType"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasDefaultPortion"/>
+        <Class IRI="#DefaultIngredientPortion"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasDietType"/>
+        <Class IRI="#DietType"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasDifficultyCategory"/>
+        <Class IRI="#CookingDifficultyCategory"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasGeographicalProvenance"/>
+        <Class abbreviatedIRI="generic:PhysicalGeographicEntity"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasGuest"/>
+        <Class abbreviatedIRI="dul:Person"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasIngredient"/>
+        <Class IRI="#IngredientPortion"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasMealCourse"/>
+        <Class IRI="#MealCourseRole"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasMealStructure"/>
+        <Class IRI="#MealStructure"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasNutrient"/>
+        <Class IRI="#NutrientPortion"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#impliesPreference"/>
+        <Class abbreviatedIRI="user:Preference"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#largestProducer"/>
+        <Class abbreviatedIRI="dul:Place"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#likes"/>
+        <Class IRI="#FoodOrDrinkItem"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#producedByRecipe"/>
+        <Class IRI="#Recipe"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#producesFoodItem"/>
+        <Class IRI="#FoodOrDrinkItem"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#suitableForDiet"/>
+        <Class IRI="#DietAssessment"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#suitableForMealCourse"/>
+        <Class IRI="#MealCourseType"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#treat"/>
+        <Class IRI="#Disease"/>
+    </ObjectPropertyRange>
+    <DataPropertyDomain>
+        <DataProperty IRI="#hasScore"/>
+        <Class IRI="#DietAssessment"/>
+    </DataPropertyDomain>
+    <DataPropertyRange>
+        <DataProperty IRI="#hasScore"/>
+        <Datatype abbreviatedIRI="xsd:double"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#numberOfGuests"/>
+        <Datatype abbreviatedIRI="xsd:int"/>
+    </DataPropertyRange>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#FingerFood</IRI>
+        <IRI>#SideCourse</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Fish</IRI>
+        <IRI>#SideCourse</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#IngredientPreference</IRI>
+        <IRI>#SideCourse</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Recipe</IRI>
+        <IRI>#SideCourse</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#RecipeDescription</IRI>
+        <IRI>#SideCourse</IRI>
+    </AnnotationAssertion>
+</Ontology>
+
+
+
+<!-- Generated by the OWL API (version 4.2.5.20160517-0735) https://github.com/owlcs/owlapi -->
+

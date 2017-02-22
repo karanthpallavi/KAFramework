@@ -1,0 +1,686 @@
+<?xml version="1.0"?>
+
+
+<!DOCTYPE rdf:RDF [
+    <!ENTITY w3ctime "http://www.w3.org/2006/time#" >
+    <!ENTITY owl "http://www.w3.org/2002/07/owl#" >
+    <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
+    <!ENTITY ssn "http://purl.oclc.org/NET/ssnx/ssn#" >
+    <!ENTITY owl2xml "http://www.w3.org/2006/12/owl2-xml#" >
+    <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
+    <!ENTITY dul "http://www.loa-cnr.it/ontologies/DUL.owl#" >
+    <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
+    <!ENTITY protege "http://protege.stanford.edu/plugins/owl/protege#" >
+    <!ENTITY xsp "http://www.owl-ontologies.com/2005/08/07/xsp.owl#" >
+    <!ENTITY user "http://kmi.open.ac.uk/projects/smartproducts/ontologies/user.owl#" >
+    <!ENTITY sptime "http://kmi.open.ac.uk/projects/smartproducts/ontologies/time.owl#" >
+    <!ENTITY generic "http://kmi.open.ac.uk/projects/smartproducts/ontologies/generic.owl#" >
+    <!ENTITY context "http://kmi.open.ac.uk/projects/smartproducts/ontologies/context.owl#" >
+]>
+
+
+<rdf:RDF xmlns="http://kmi.open.ac.uk/projects/smartproducts/ontologies/product.owl#"
+     xml:base="http://kmi.open.ac.uk/projects/smartproducts/ontologies/product.owl"
+     xmlns:generic="http://kmi.open.ac.uk/projects/smartproducts/ontologies/generic.owl#"
+     xmlns:protege="http://protege.stanford.edu/plugins/owl/protege#"
+     xmlns:xsp="http://www.owl-ontologies.com/2005/08/07/xsp.owl#"
+     xmlns:ssn="http://purl.oclc.org/NET/ssnx/ssn#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:w3ctime="http://www.w3.org/2006/time#"
+     xmlns:owl2xml="http://www.w3.org/2006/12/owl2-xml#"
+     xmlns:dul="http://www.loa-cnr.it/ontologies/DUL.owl#"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:context="http://kmi.open.ac.uk/projects/smartproducts/ontologies/context.owl#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:user="http://kmi.open.ac.uk/projects/smartproducts/ontologies/user.owl#"
+     xmlns:sptime="http://kmi.open.ac.uk/projects/smartproducts/ontologies/time.owl#">
+    <owl:Ontology rdf:about="http://kmi.open.ac.uk/projects/smartproducts/ontologies/product.owl">
+        <rdfs:comment>Contains scenario-independent concepts and properties related to  products and their parts.</rdfs:comment>
+        <owl:imports rdf:resource="http://kmi.open.ac.uk/projects/smartproducts/ontologies/user.owl"/>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <owl:AnnotationProperty rdf:about="&rdfs;Literal"/>
+    <owl:AnnotationProperty rdf:about="&rdfs;comment"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://kmi.open.ac.uk/projects/smartproducts/ontologies/generic.owl#hasCapability -->
+
+    <rdf:Description rdf:about="&generic;hasCapability">
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&generic;Device"/>
+                    <rdf:Description rdf:about="http://kmi.open.ac.uk/projects/smartproducts/ontologies/product.owl#JoiningPolicy"/>
+                    <rdf:Description rdf:about="&dul;Agent"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+    </rdf:Description>
+    
+
+
+    <!-- http://kmi.open.ac.uk/projects/smartproducts/ontologies/product.owl#applicableToAmbianceType -->
+
+    <owl:ObjectProperty rdf:about="http://kmi.open.ac.uk/projects/smartproducts/ontologies/product.owl#applicableToAmbianceType">
+        <rdfs:range rdf:resource="&generic;AmbianceType"/>
+        <rdfs:domain rdf:resource="http://kmi.open.ac.uk/projects/smartproducts/ontologies/product.owl#JoiningPolicy"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://kmi.open.ac.uk/projects/smartproducts/ontologies/product.owl#applicableToProductType -->
+
+    <owl:ObjectProperty rdf:about="http://kmi.open.ac.uk/projects/smartproducts/ontologies/product.owl#applicableToProductType">
+        <rdfs:domain rdf:resource="http://kmi.open.ac.uk/projects/smartproducts/ontologies/product.owl#JoiningPolicy"/>
+        <rdfs:range rdf:resource="http://kmi.open.ac.uk/projects/smartproducts/ontologies/product.owl#SmartProductType"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://kmi.open.ac.uk/projects/smartproducts/ontologies/product.owl#associatedWithSmartProduct -->
+
+    <owl:ObjectProperty rdf:about="http://kmi.open.ac.uk/projects/smartproducts/ontologies/product.owl#associatedWithSmartProduct">
+        <rdfs:domain rdf:resource="http://kmi.open.ac.uk/projects/smartproducts/ontologies/product.owl#PSMInAmbiance"/>
+        <rdfs:range rdf:resource="http://kmi.open.ac.uk/projects/smartproducts/ontologies/product.owl#SmartProduct"/>
+        <rdfs:subPropertyOf rdf:resource="&dul;isConceptualizedBy"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://kmi.open.ac.uk/projects/smartproducts/ontologies/product.owl#containsSmartProduct -->
+
+    <owl:ObjectProperty rdf:about="http://kmi.open.ac.uk/projects/smartproducts/ontologies/product.owl#containsSmartProduct">
+        <rdfs:domain rdf:resource="&generic;Ambiance"/>
+        <rdfs:range rdf:resource="http://kmi.open.ac.uk/projects/smartproducts/ontologies/product.owl#SmartProduct"/>
+        <rdfs:subPropertyOf rdf:resource="&dul;isLocationOf"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://kmi.open.ac.uk/projects/smartproducts/ontologies/product.owl#executedByPSM -->
+
+    <owl:ObjectProperty rdf:about="http://kmi.open.ac.uk/projects/smartproducts/ontologies/product.owl#executedByPSM">
+        <rdfs:domain rdf:resource="http://kmi.open.ac.uk/projects/smartproducts/ontologies/product.owl#PSMExecutionInAmbiance"/>
+        <rdfs:range rdf:resource="http://kmi.open.ac.uk/projects/smartproducts/ontologies/product.owl#PSMInAmbiance"/>
+        <rdfs:subPropertyOf rdf:resource="&dul;satisfies"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://kmi.open.ac.uk/projects/smartproducts/ontologies/product.owl#executedTask -->
+
+    <owl:ObjectProperty rdf:about="http://kmi.open.ac.uk/projects/smartproducts/ontologies/product.owl#executedTask">
+        <rdfs:range rdf:resource="&generic;TaskInAmbiance"/>
+        <rdfs:domain rdf:resource="http://kmi.open.ac.uk/projects/smartproducts/ontologies/product.owl#PSMExecutionInAmbiance"/>
+        <rdfs:subPropertyOf rdf:resource="&dul;isSettingFor"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://kmi.open.ac.uk/projects/smartproducts/ontologies/product.owl#hasJoiningPolicy -->
+
+    <owl:ObjectProperty rdf:about="http://kmi.open.ac.uk/projects/smartproducts/ontologies/product.owl#hasJoiningPolicy">
+        <rdfs:range rdf:resource="http://kmi.open.ac.uk/projects/smartproducts/ontologies/product.owl#JoiningPolicy"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&generic;Ambiance"/>
+                    <rdf:Description rdf:about="http://kmi.open.ac.uk/projects/smartproducts/ontologies/product.owl#SmartProduct"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://kmi.open.ac.uk/projects/smartproducts/ontologies/product.owl#hasModel -->
+
+    <owl:ObjectProperty rdf:about="http://kmi.open.ac.uk/projects/smartproducts/ontologies/product.owl#hasModel">
+        <rdfs:domain rdf:resource="http://kmi.open.ac.uk/projects/smartproducts/ontologies/product.owl#Product"/>
+        <rdfs:range rdf:resource="http://kmi.open.ac.uk/projects/smartproducts/ontologies/product.owl#ProductModel"/>
+        <rdfs:subPropertyOf rdf:resource="&dul;isDescribedBy"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://kmi.open.ac.uk/projects/smartproducts/ontologies/product.owl#hasPolicyType -->
+
+    <owl:ObjectProperty rdf:about="http://kmi.open.ac.uk/projects/smartproducts/ontologies/product.owl#hasPolicyType">
+        <rdfs:domain rdf:resource="http://kmi.open.ac.uk/projects/smartproducts/ontologies/product.owl#JoiningPolicy"/>
+        <rdfs:range rdf:resource="http://kmi.open.ac.uk/projects/smartproducts/ontologies/product.owl#JoiningPolicyType"/>
+        <rdfs:subPropertyOf rdf:resource="&dul;hasRegion"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://kmi.open.ac.uk/projects/smartproducts/ontologies/product.owl#producedBy -->
+
+    <owl:ObjectProperty rdf:about="http://kmi.open.ac.uk/projects/smartproducts/ontologies/product.owl#producedBy">
+        <rdfs:domain rdf:resource="http://kmi.open.ac.uk/projects/smartproducts/ontologies/product.owl#Product"/>
+        <rdfs:range rdf:resource="&dul;SocialAgent"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://kmi.open.ac.uk/projects/smartproducts/ontologies/product.owl#acceptsCharset -->
+
+    <owl:DatatypeProperty rdf:about="http://kmi.open.ac.uk/projects/smartproducts/ontologies/product.owl#acceptsCharset">
+        <rdfs:domain rdf:resource="http://kmi.open.ac.uk/projects/smartproducts/ontologies/product.owl#ProcessingDeviceComponent"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://kmi.open.ac.uk/projects/smartproducts/ontologies/product.owl#acceptsDownloadableSoftware -->
+
+    <owl:DatatypeProperty rdf:about="http://kmi.open.ac.uk/projects/smartproducts/ontologies/product.owl#acceptsDownloadableSoftware">
+        <rdfs:domain rdf:resource="http://kmi.open.ac.uk/projects/smartproducts/ontologies/product.owl#ProcessingDeviceComponent"/>
+        <rdfs:range rdf:resource="&xsd;boolean"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://kmi.open.ac.uk/projects/smartproducts/ontologies/product.owl#acceptsEncoding -->
+
+    <owl:DatatypeProperty rdf:about="http://kmi.open.ac.uk/projects/smartproducts/ontologies/product.owl#acceptsEncoding">
+        <rdfs:domain rdf:resource="http://kmi.open.ac.uk/projects/smartproducts/ontologies/product.owl#ProcessingDeviceComponent"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://kmi.open.ac.uk/projects/smartproducts/ontologies/product.owl#acceptsSoftwareType -->
+
+    <owl:DatatypeProperty rdf:about="http://kmi.open.ac.uk/projects/smartproducts/ontologies/product.owl#acceptsSoftwareType">
+        <rdfs:domain rdf:resource="http://kmi.open.ac.uk/projects/smartproducts/ontologies/product.owl#ProcessingDeviceComponent"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://kmi.open.ac.uk/projects/smartproducts/ontologies/product.owl#bitsPerPixel -->
+
+    <owl:DatatypeProperty rdf:about="http://kmi.open.ac.uk/projects/smartproducts/ontologies/product.owl#bitsPerPixel">
+        <rdfs:domain rdf:resource="http://kmi.open.ac.uk/projects/smartproducts/ontologies/product.owl#DisplayOutputDeviceComponent"/>
+        <rdfs:range rdf:resource="&xsd;int"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://kmi.open.ac.uk/projects/smartproducts/ontologies/product.owl#hasInputCharset -->
+
+    <owl:DatatypeProperty rdf:about="http://kmi.open.ac.uk/projects/smartproducts/ontologies/product.owl#hasInputCharset">
+        <rdfs:domain rdf:resource="http://kmi.open.ac.uk/projects/smartproducts/ontologies/product.owl#InputDeviceComponent"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://kmi.open.ac.uk/projects/smartproducts/ontologies/product.owl#hasKeyboard -->
+
+    <owl:DatatypeProperty rdf:about="http://kmi.open.ac.uk/projects/smartproducts/ontologies/product.owl#hasKeyboard">
+        <rdfs:domain rdf:resource="http://kmi.open.ac.uk/projects/smartproducts/ontologies/product.owl#InputDeviceComponent"/>
+        <rdfs:range rdf:resource="&xsd;boolean"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://kmi.open.ac.uk/projects/smartproducts/ontologies/product.owl#hasNumberOfSoftKeys -->
+
+    <owl:DatatypeProperty rdf:about="http://kmi.open.ac.uk/projects/smartproducts/ontologies/product.owl#hasNumberOfSoftKeys">
+        <rdfs:domain rdf:resource="http://kmi.open.ac.uk/projects/smartproducts/ontologies/product.owl#InputDeviceComponent"/>
+        <rdfs:range rdf:resource="&xsd;int"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://kmi.open.ac.uk/projects/smartproducts/ontologies/product.owl#hasOutputCharset -->
+
+    <owl:DatatypeProperty rdf:about="http://kmi.open.ac.uk/projects/smartproducts/ontologies/product.owl#hasOutputCharset">
+        <rdfs:domain rdf:resource="http://kmi.open.ac.uk/projects/smartproducts/ontologies/product.owl#OutputDeviceComponent"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://kmi.open.ac.uk/projects/smartproducts/ontologies/product.owl#hasPixelAspectRatio -->
+
+    <owl:DatatypeProperty rdf:about="http://kmi.open.ac.uk/projects/smartproducts/ontologies/product.owl#hasPixelAspectRatio">
+        <rdfs:domain rdf:resource="http://kmi.open.ac.uk/projects/smartproducts/ontologies/product.owl#DisplayOutputDeviceComponent"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://kmi.open.ac.uk/projects/smartproducts/ontologies/product.owl#hasScreenHeight -->
+
+    <owl:DatatypeProperty rdf:about="http://kmi.open.ac.uk/projects/smartproducts/ontologies/product.owl#hasScreenHeight">
+        <rdfs:domain rdf:resource="http://kmi.open.ac.uk/projects/smartproducts/ontologies/product.owl#DisplayOutputDeviceComponent"/>
+        <rdfs:range rdf:resource="&xsd;int"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://kmi.open.ac.uk/projects/smartproducts/ontologies/product.owl#hasScreenHeightChar -->
+
+    <owl:DatatypeProperty rdf:about="http://kmi.open.ac.uk/projects/smartproducts/ontologies/product.owl#hasScreenHeightChar">
+        <rdfs:domain rdf:resource="http://kmi.open.ac.uk/projects/smartproducts/ontologies/product.owl#DisplayOutputDeviceComponent"/>
+        <rdfs:range rdf:resource="&xsd;int"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://kmi.open.ac.uk/projects/smartproducts/ontologies/product.owl#hasScreenWidth -->
+
+    <owl:DatatypeProperty rdf:about="http://kmi.open.ac.uk/projects/smartproducts/ontologies/product.owl#hasScreenWidth">
+        <rdfs:domain rdf:resource="http://kmi.open.ac.uk/projects/smartproducts/ontologies/product.owl#DisplayOutputDeviceComponent"/>
+        <rdfs:range rdf:resource="&xsd;int"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://kmi.open.ac.uk/projects/smartproducts/ontologies/product.owl#hasScreenWidthChar -->
+
+    <owl:DatatypeProperty rdf:about="http://kmi.open.ac.uk/projects/smartproducts/ontologies/product.owl#hasScreenWidthChar">
+        <rdfs:domain rdf:resource="http://kmi.open.ac.uk/projects/smartproducts/ontologies/product.owl#DisplayOutputDeviceComponent"/>
+        <rdfs:range rdf:resource="&xsd;int"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://kmi.open.ac.uk/projects/smartproducts/ontologies/product.owl#hasVendor -->
+
+    <owl:DatatypeProperty rdf:about="http://kmi.open.ac.uk/projects/smartproducts/ontologies/product.owl#hasVendor">
+        <rdfs:domain rdf:resource="http://kmi.open.ac.uk/projects/smartproducts/ontologies/product.owl#Product"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://kmi.open.ac.uk/projects/smartproducts/ontologies/product.owl#hasVersion -->
+
+    <owl:DatatypeProperty rdf:about="http://kmi.open.ac.uk/projects/smartproducts/ontologies/product.owl#hasVersion">
+        <rdfs:domain rdf:resource="http://kmi.open.ac.uk/projects/smartproducts/ontologies/product.owl#Product"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://kmi.open.ac.uk/projects/smartproducts/ontologies/product.owl#isColorCapable -->
+
+    <owl:DatatypeProperty rdf:about="http://kmi.open.ac.uk/projects/smartproducts/ontologies/product.owl#isColorCapable">
+        <rdfs:domain rdf:resource="http://kmi.open.ac.uk/projects/smartproducts/ontologies/product.owl#OutputDeviceComponent"/>
+        <rdfs:range rdf:resource="&xsd;boolean"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://kmi.open.ac.uk/projects/smartproducts/ontologies/product.owl#isImageCapable -->
+
+    <owl:DatatypeProperty rdf:about="http://kmi.open.ac.uk/projects/smartproducts/ontologies/product.owl#isImageCapable">
+        <rdfs:domain rdf:resource="http://kmi.open.ac.uk/projects/smartproducts/ontologies/product.owl#OutputDeviceComponent"/>
+        <rdfs:range rdf:resource="&xsd;boolean"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://kmi.open.ac.uk/projects/smartproducts/ontologies/product.owl#isSoundOutputCapable -->
+
+    <owl:DatatypeProperty rdf:about="http://kmi.open.ac.uk/projects/smartproducts/ontologies/product.owl#isSoundOutputCapable">
+        <rdfs:domain rdf:resource="http://kmi.open.ac.uk/projects/smartproducts/ontologies/product.owl#OutputDeviceComponent"/>
+        <rdfs:range rdf:resource="&xsd;boolean"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://kmi.open.ac.uk/projects/smartproducts/ontologies/product.owl#isTextInputCapable -->
+
+    <owl:DatatypeProperty rdf:about="http://kmi.open.ac.uk/projects/smartproducts/ontologies/product.owl#isTextInputCapable">
+        <rdfs:domain rdf:resource="http://kmi.open.ac.uk/projects/smartproducts/ontologies/product.owl#InputDeviceComponent"/>
+        <rdfs:range rdf:resource="&xsd;boolean"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://kmi.open.ac.uk/projects/smartproducts/ontologies/product.owl#isVoiceInputCapable -->
+
+    <owl:DatatypeProperty rdf:about="http://kmi.open.ac.uk/projects/smartproducts/ontologies/product.owl#isVoiceInputCapable">
+        <rdfs:domain rdf:resource="http://kmi.open.ac.uk/projects/smartproducts/ontologies/product.owl#InputDeviceComponent"/>
+        <rdfs:range rdf:resource="&xsd;boolean"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://kmi.open.ac.uk/projects/smartproducts/ontologies/product.owl#standardFontProportional -->
+
+    <owl:DatatypeProperty rdf:about="http://kmi.open.ac.uk/projects/smartproducts/ontologies/product.owl#standardFontProportional">
+        <rdfs:domain rdf:resource="http://kmi.open.ac.uk/projects/smartproducts/ontologies/product.owl#DisplayOutputDeviceComponent"/>
+        <rdfs:range rdf:resource="&xsd;boolean"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://kmi.open.ac.uk/projects/smartproducts/ontologies/generic.owl#Capability -->
+
+    <owl:Class rdf:about="&generic;Capability"/>
+    
+
+
+    <!-- http://kmi.open.ac.uk/projects/smartproducts/ontologies/generic.owl#Device -->
+
+    <owl:Class rdf:about="&generic;Device"/>
+    
+
+
+    <!-- http://kmi.open.ac.uk/projects/smartproducts/ontologies/generic.owl#DeviceComponent -->
+
+    <owl:Class rdf:about="&generic;DeviceComponent"/>
+    
+
+
+    <!-- http://kmi.open.ac.uk/projects/smartproducts/ontologies/generic.owl#PhysicalEntityInSpace -->
+
+    <owl:Class rdf:about="&generic;PhysicalEntityInSpace"/>
+    
+
+
+    <!-- http://kmi.open.ac.uk/projects/smartproducts/ontologies/generic.owl#ProactiveAgent -->
+
+    <owl:Class rdf:about="&generic;ProactiveAgent"/>
+    
+
+
+    <!-- http://kmi.open.ac.uk/projects/smartproducts/ontologies/generic.owl#ProblemSolvingMethod -->
+
+    <owl:Class rdf:about="&generic;ProblemSolvingMethod">
+        <rdfs:subClassOf rdf:resource="&dul;Plan"/>
+    </owl:Class>
+    
+
+
+    <!-- http://kmi.open.ac.uk/projects/smartproducts/ontologies/product.owl#CGAudioOutputDevice -->
+
+    <owl:Class rdf:about="http://kmi.open.ac.uk/projects/smartproducts/ontologies/product.owl#CGAudioOutputDevice">
+        <rdfs:subClassOf rdf:resource="http://kmi.open.ac.uk/projects/smartproducts/ontologies/product.owl#CommunicationDeviceComponent"/>
+    </owl:Class>
+    
+
+
+    <!-- http://kmi.open.ac.uk/projects/smartproducts/ontologies/product.owl#CGVisualOutputDevice -->
+
+    <owl:Class rdf:about="http://kmi.open.ac.uk/projects/smartproducts/ontologies/product.owl#CGVisualOutputDevice">
+        <rdfs:subClassOf rdf:resource="http://kmi.open.ac.uk/projects/smartproducts/ontologies/product.owl#CommunicationDeviceComponent"/>
+    </owl:Class>
+    
+
+
+    <!-- http://kmi.open.ac.uk/projects/smartproducts/ontologies/product.owl#CommunicationDeviceComponent -->
+
+    <owl:Class rdf:about="http://kmi.open.ac.uk/projects/smartproducts/ontologies/product.owl#CommunicationDeviceComponent">
+        <rdfs:subClassOf rdf:resource="&generic;DeviceComponent"/>
+    </owl:Class>
+    
+
+
+    <!-- http://kmi.open.ac.uk/projects/smartproducts/ontologies/product.owl#DeviceState -->
+
+    <owl:Class rdf:about="http://kmi.open.ac.uk/projects/smartproducts/ontologies/product.owl#DeviceState">
+        <rdfs:subClassOf rdf:resource="&dul;Quality"/>
+    </owl:Class>
+    
+
+
+    <!-- http://kmi.open.ac.uk/projects/smartproducts/ontologies/product.owl#DisplayOutputDeviceComponent -->
+
+    <owl:Class rdf:about="http://kmi.open.ac.uk/projects/smartproducts/ontologies/product.owl#DisplayOutputDeviceComponent">
+        <rdfs:subClassOf rdf:resource="http://kmi.open.ac.uk/projects/smartproducts/ontologies/product.owl#OutputDeviceComponent"/>
+    </owl:Class>
+    
+
+
+    <!-- http://kmi.open.ac.uk/projects/smartproducts/ontologies/product.owl#InputDeviceComponent -->
+
+    <owl:Class rdf:about="http://kmi.open.ac.uk/projects/smartproducts/ontologies/product.owl#InputDeviceComponent">
+        <rdfs:subClassOf rdf:resource="http://kmi.open.ac.uk/projects/smartproducts/ontologies/product.owl#CommunicationDeviceComponent"/>
+    </owl:Class>
+    
+
+
+    <!-- http://kmi.open.ac.uk/projects/smartproducts/ontologies/product.owl#JoiningPolicy -->
+
+    <owl:Class rdf:about="http://kmi.open.ac.uk/projects/smartproducts/ontologies/product.owl#JoiningPolicy">
+        <rdfs:subClassOf rdf:resource="&dul;Description"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&generic;hasCapability"/>
+                <owl:allValuesFrom rdf:resource="&generic;Capability"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://kmi.open.ac.uk/projects/smartproducts/ontologies/product.owl#JoiningPolicyType -->
+
+    <owl:Class rdf:about="http://kmi.open.ac.uk/projects/smartproducts/ontologies/product.owl#JoiningPolicyType">
+        <rdfs:subClassOf rdf:resource="&dul;SocialObjectAttribute"/>
+    </owl:Class>
+    
+
+
+    <!-- http://kmi.open.ac.uk/projects/smartproducts/ontologies/product.owl#OutputDeviceComponent -->
+
+    <owl:Class rdf:about="http://kmi.open.ac.uk/projects/smartproducts/ontologies/product.owl#OutputDeviceComponent">
+        <rdfs:subClassOf rdf:resource="http://kmi.open.ac.uk/projects/smartproducts/ontologies/product.owl#CommunicationDeviceComponent"/>
+    </owl:Class>
+    
+
+
+    <!-- http://kmi.open.ac.uk/projects/smartproducts/ontologies/product.owl#PSMExecutionInAmbiance -->
+
+    <owl:Class rdf:about="http://kmi.open.ac.uk/projects/smartproducts/ontologies/product.owl#PSMExecutionInAmbiance">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&dul;PlanExecution"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://kmi.open.ac.uk/projects/smartproducts/ontologies/product.owl#executedByPSM"/>
+                        <owl:someValuesFrom rdf:resource="&generic;ProblemSolvingMethod"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="&dul;PlanExecution"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://kmi.open.ac.uk/projects/smartproducts/ontologies/product.owl#executedTask"/>
+                <owl:onClass rdf:resource="&generic;TaskInAmbiance"/>
+                <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&generic;hasLocation"/>
+                <owl:onClass rdf:resource="&generic;Ambiance"/>
+                <owl:minQualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:minQualifiedCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://kmi.open.ac.uk/projects/smartproducts/ontologies/product.owl#executedByPSM"/>
+                <owl:onClass rdf:resource="http://kmi.open.ac.uk/projects/smartproducts/ontologies/product.owl#PSMInAmbiance"/>
+                <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://kmi.open.ac.uk/projects/smartproducts/ontologies/product.owl#PSMInAmbiance -->
+
+    <owl:Class rdf:about="http://kmi.open.ac.uk/projects/smartproducts/ontologies/product.owl#PSMInAmbiance">
+        <rdfs:subClassOf rdf:resource="&generic;ProblemSolvingMethod"/>
+    </owl:Class>
+    
+
+
+    <!-- http://kmi.open.ac.uk/projects/smartproducts/ontologies/product.owl#ProcessingDeviceComponent -->
+
+    <owl:Class rdf:about="http://kmi.open.ac.uk/projects/smartproducts/ontologies/product.owl#ProcessingDeviceComponent">
+        <rdfs:subClassOf rdf:resource="&generic;DeviceComponent"/>
+    </owl:Class>
+    
+
+
+    <!-- http://kmi.open.ac.uk/projects/smartproducts/ontologies/product.owl#Product -->
+
+    <owl:Class rdf:about="http://kmi.open.ac.uk/projects/smartproducts/ontologies/product.owl#Product">
+        <rdfs:subClassOf rdf:resource="&dul;Object"/>
+        <rdfs:comment xml:lang="en">A product is something that is produced by a person or organization.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://kmi.open.ac.uk/projects/smartproducts/ontologies/product.owl#ProductModel -->
+
+    <owl:Class rdf:about="http://kmi.open.ac.uk/projects/smartproducts/ontologies/product.owl#ProductModel">
+        <rdfs:subClassOf rdf:resource="&dul;Description"/>
+    </owl:Class>
+    
+
+
+    <!-- http://kmi.open.ac.uk/projects/smartproducts/ontologies/product.owl#ProductizedDevice -->
+
+    <owl:Class rdf:about="http://kmi.open.ac.uk/projects/smartproducts/ontologies/product.owl#ProductizedDevice">
+        <rdfs:subClassOf rdf:resource="&generic;Device"/>
+        <rdfs:subClassOf rdf:resource="http://kmi.open.ac.uk/projects/smartproducts/ontologies/product.owl#Product"/>
+    </owl:Class>
+    
+
+
+    <!-- http://kmi.open.ac.uk/projects/smartproducts/ontologies/product.owl#ReasoningDeviceComponent -->
+
+    <owl:Class rdf:about="http://kmi.open.ac.uk/projects/smartproducts/ontologies/product.owl#ReasoningDeviceComponent">
+        <rdfs:subClassOf rdf:resource="http://kmi.open.ac.uk/projects/smartproducts/ontologies/product.owl#ProcessingDeviceComponent"/>
+    </owl:Class>
+    
+
+
+    <!-- http://kmi.open.ac.uk/projects/smartproducts/ontologies/product.owl#SensorDeviceComponent -->
+
+    <owl:Class rdf:about="http://kmi.open.ac.uk/projects/smartproducts/ontologies/product.owl#SensorDeviceComponent">
+        <rdfs:subClassOf rdf:resource="&generic;DeviceComponent"/>
+    </owl:Class>
+    
+
+
+    <!-- http://kmi.open.ac.uk/projects/smartproducts/ontologies/product.owl#SensorEvent -->
+
+    <owl:Class rdf:about="http://kmi.open.ac.uk/projects/smartproducts/ontologies/product.owl#SensorEvent">
+        <rdfs:subClassOf rdf:resource="&dul;Event"/>
+    </owl:Class>
+    
+
+
+    <!-- http://kmi.open.ac.uk/projects/smartproducts/ontologies/product.owl#SmartProduct -->
+
+    <owl:Class rdf:about="http://kmi.open.ac.uk/projects/smartproducts/ontologies/product.owl#SmartProduct">
+        <rdfs:subClassOf rdf:resource="&generic;ProactiveAgent"/>
+        <rdfs:subClassOf rdf:resource="http://kmi.open.ac.uk/projects/smartproducts/ontologies/product.owl#Product"/>
+        <rdfs:subClassOf rdf:resource="&user;UserAwareAgent"/>
+    </owl:Class>
+    
+
+
+    <!-- http://kmi.open.ac.uk/projects/smartproducts/ontologies/product.owl#SmartProductType -->
+
+    <owl:Class rdf:about="http://kmi.open.ac.uk/projects/smartproducts/ontologies/product.owl#SmartProductType">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&rdfs;subClassOf"/>
+                <owl:hasValue rdf:resource="http://kmi.open.ac.uk/projects/smartproducts/ontologies/product.owl#SmartProduct"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="&generic;MetaClass"/>
+    </owl:Class>
+    
+
+
+    <!-- http://kmi.open.ac.uk/projects/smartproducts/ontologies/product.owl#SmartProductizedDevice -->
+
+    <owl:Class rdf:about="http://kmi.open.ac.uk/projects/smartproducts/ontologies/product.owl#SmartProductizedDevice">
+        <rdfs:subClassOf rdf:resource="http://kmi.open.ac.uk/projects/smartproducts/ontologies/product.owl#ProductizedDevice"/>
+        <rdfs:subClassOf rdf:resource="http://kmi.open.ac.uk/projects/smartproducts/ontologies/product.owl#SmartProduct"/>
+    </owl:Class>
+    
+
+
+    <!-- http://kmi.open.ac.uk/projects/smartproducts/ontologies/product.owl#SmartSoftwareProduct -->
+
+    <owl:Class rdf:about="http://kmi.open.ac.uk/projects/smartproducts/ontologies/product.owl#SmartSoftwareProduct">
+        <rdfs:subClassOf rdf:resource="http://kmi.open.ac.uk/projects/smartproducts/ontologies/product.owl#SmartProduct"/>
+        <rdfs:subClassOf rdf:resource="http://kmi.open.ac.uk/projects/smartproducts/ontologies/product.owl#SoftwareProduct"/>
+    </owl:Class>
+    
+
+
+    <!-- http://kmi.open.ac.uk/projects/smartproducts/ontologies/product.owl#SoftwareProduct -->
+
+    <owl:Class rdf:about="http://kmi.open.ac.uk/projects/smartproducts/ontologies/product.owl#SoftwareProduct">
+        <rdfs:subClassOf rdf:resource="http://kmi.open.ac.uk/projects/smartproducts/ontologies/product.owl#Product"/>
+    </owl:Class>
+    
+
+
+    <!-- http://kmi.open.ac.uk/projects/smartproducts/ontologies/user.owl#UserAwareAgent -->
+
+    <owl:Class rdf:about="&user;UserAwareAgent"/>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 3.2.0.1502) http://owlapi.sourceforge.net -->
+
